@@ -1,4 +1,4 @@
-import "./Media.css";
+
 
 const Media = () => {
   return (

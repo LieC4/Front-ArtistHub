@@ -1,4 +1,4 @@
-import "./MediaDetail.css";
+
 
 const Profile = () => {
   return (

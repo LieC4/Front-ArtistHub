@@ -1,13 +1,8 @@
+import React from "react";
 
-
-const Button = () => {
-    const [showAbout, setShowAbout] = useState(true);
-    return (
-<div className='divbutton'>
-<button onClick={() => setShowAbout(true)} className='-'></button>
-<button onClick={() => setShowAbout(false)} className='-'></button>
-</div>
-
-)};
+const Button = ({btnFunction, text}) => {
+ return 
+ <button onClick={() => btnFunction}>{text}</button>
+};
 
 export default Button;
