@@ -11,6 +11,8 @@ import Projects from "./pages/Projects/Projects"
 import ProjectDetail from "./pages/ProjectDetail/ProjectDetail"
 import Media from "./pages/Media/Media"
 import MediaDetail from "./pages/MediaDetail/MediaDetail"
+import Header from "./components/Header/Header"
+import Footer from "./components/Footer/Footer";
 
 
 
@@ -22,8 +24,13 @@ function App() {
     const newTheme = theme === "☀️" ? "🌚" : "☀️";
     setTheme(newTheme);
   };
+
   const next = () => {
     console.log("Next")
+  }
+  
+  const sayHello = () => {
+    console.log("Hello")
   }
   
 
@@ -35,6 +42,8 @@ function App() {
             Mode {theme === "☀️" ? "🌚" : "☀️"}{" "}
           </button>
           <Button btnFunction={next} text="Next"/>
+          <Button btnFunction={sayHello} text="Hello"/>
+          <Header />
           <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -48,7 +57,7 @@ function App() {
           <Route path="/profile/:id/medias/:id" element={<MediaDetail />} />
           <Route path="/artists" element={<ArtistCards />} />
           </Routes>
-
+          <Footer />
 
 
       
