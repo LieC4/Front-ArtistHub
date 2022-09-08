@@ -68,13 +68,13 @@ header {
 /*dark mode button */
 
 
-  input[type=checkbox]{
+  .input[type=checkbox]{
     height: 0;
     width: 0;
     visibility: hidden;
   }
   
-  label {
+  .label {
     cursor: pointer;
     text-indent: -9999px;
     width: 60px;
@@ -85,7 +85,7 @@ header {
     position: relative;
   }
   
-  label:after {
+  .label:after {
     content: '';
     position: absolute;
     top: 5px;
@@ -97,11 +97,11 @@ header {
     transition: 0.3s;
   }
   
-  input:checked + label {
+  .input:checked + label {
     background: #f3f2f0;
   }
   
-  input:checked + label:after {
+  .input:checked + label:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
     background: #c6baba;
@@ -109,7 +109,7 @@ header {
 
 
 
-  label:active:after {
+  .label:active:after {
     width: 30px;
   }
   
@@ -122,7 +122,7 @@ header {
 
 }
 
-input {
+.input {
     width: 200px;
 
 }

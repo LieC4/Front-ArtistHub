@@ -17,7 +17,9 @@ const Header = ({switchTheme}) => {
                     <img src="https://cdn.discordapp.com/attachments/997072273892724886/1017342131754516480/artisthub_logo.png" alt="logo" />
                 </div>
                 <div className="buscar">
-                <SearchBar/>
+                <div className="searchbar_salvaje">
+                    <SearchBar/>
+                </div>
                 </div>
                 <ul className="nav">
                     <li className="li-home">
@@ -58,7 +60,7 @@ const Header = ({switchTheme}) => {
         )}
                 </div>
                 <div className="toggle">
-                <input type="checkbox" id="switch" /><label for="switch" onClick={switchTheme}>Toggle</label>
+                <input className="input" type="checkbox" id="switch" /><label className="label" htmlFor="switch" onClick={switchTheme}>Toggle</label>
                 </div>
             </nav>
 
