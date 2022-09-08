@@ -25,25 +25,14 @@ function App() {
     setTheme(newTheme);
   };
 
-  const next = () => {
-    console.log("Next")
-  }
-  
-  const sayHello = () => {
-    console.log("Hello")
-  }
-  
+ 
 
   return (
     <JwtContextProvider>
-    <div className="App">
+    <div className="App" data-theme={theme}>
     <Router>
-          <button className="mode" onClick={switchTheme}>
-            Mode {theme === "☀️" ? "🌚" : "☀️"}{" "}
-          </button>
-          <Button btnFunction={next} text="Next"/>
-          <Button btnFunction={sayHello} text="Hello"/>
-          <Header />
+
+          <Header switchTheme={switchTheme}/>
           <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

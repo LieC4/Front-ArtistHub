@@ -3,8 +3,9 @@ import { JwtContext } from "../../contexts/jwtContext"
 import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import Button from "../Buttons/Button";
+import "./Header.css"
 
-const Header = () => {
+const Header = ({switchTheme}) => {
     const {user, logout} = useContext(JwtContext);
     let navigate = useNavigate();
 
@@ -12,15 +13,17 @@ const Header = () => {
     return (
         <header>
             <nav>
-                <div>
-                    <img src="" alt="logo" />
+                <div className="logo">
+                    <img src="https://cdn.discordapp.com/attachments/997072273892724886/1017342131754516480/artisthub_logo.png" alt="logo" />
                 </div>
+                <div className="buscar">
                 <SearchBar/>
-                <ul>
-                    <li>
+                </div>
+                <ul className="nav">
+                    <li className="li-home">
                         <Link to="/">Home</Link>
                     </li>
-                    <li>
+                    <li className="li-home">
                         <Link to="/artists">Artists</Link>
                     </li>
                     {user ? (
@@ -29,7 +32,7 @@ const Header = () => {
                     </li>
                     ) : null}
                 </ul>
-                <div>
+                <div className="control">
                     {/*TODO: Revisar al hacer login y register*/}
                 {user ? (
             <>
@@ -44,14 +47,18 @@ const Header = () => {
             ) : (
             <ul className="control-ul">
             <li className="control-li">
+                <Link to="/register">Register</Link>
+            </li>
+            <li className="control-li">
                 <Link to="/login">Login</Link>
             </li>
 
-            <li className="control-li">
-                <Link to="/register">Register</Link>
-            </li>
+
             </ul>
         )}
+                </div>
+                <div className="toggle">
+                <input type="checkbox" id="switch" /><label for="switch" onClick={switchTheme}>Toggle</label>
                 </div>
             </nav>
 

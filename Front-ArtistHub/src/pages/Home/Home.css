@@ -1,0 +1,47 @@
+.home-img {
+    margin: 20px 0 20px 20px;
+  
+    width: 70vh;
+  }
+
+  .img {
+    width: 50%;
+  }
+
+  
+.home-link {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: stretch;
+    color: aliceblue;
+    background-color: var(--background);
+    width: 35%;
+    margin: 20px 0 20px 20px;
+    gap: 3rem;
+    font-size: 30px;
+  }
+  
+  .home-link .link :hover {
+    color: aliceblue;
+  }
+  
+  h1 {
+    margin-top: 50px;
+    color: var( --backgrounddos)
+  }
+  
+  .home-link h2 {
+    color: var(--text-primary);
+  }
+  
+  p {
+    font-size: 16px;
+    color: var( --text-primary)
+  }
+
+.home {
+    background: var(--backgroundGeneral);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
