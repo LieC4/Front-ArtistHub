@@ -1,12 +1,22 @@
 import "./Home.css";
+import {Title, Subtitle, Paragraph} from "../../components/Text/Text";
+import { ThemeProvider } from 'styled-components';
+import theme from "../../components/theme";
 
 const Home = () => {
   return (
     <section className="home">
     
       <div className="home-link">
-        <h1>ArtistHub</h1>
-        
+
+      <ThemeProvider theme={theme}>
+        <div>
+          <Title xl secondary capitalize>ArtistHub</Title>
+          <Subtitle md primary thin>Artisthub Subtitle</Subtitle>
+          
+          <Paragraph sm primary thin>Hello, this is a paragraph for Artisthub</Paragraph>
+        </div>
+      </ThemeProvider>
         <h2>Lets create and build together, from here.</h2>
         <p>
           The complete artist platform to create, share and deliver amazing art and music.
