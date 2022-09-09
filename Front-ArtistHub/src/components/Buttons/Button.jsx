@@ -1,8 +1,10 @@
 import React from "react";
+import "./Button.css"
 
-const Button = ({ btnFunction, text }) => {
-  return <button onClick={() => btnFunction}>{text}</button>;
+const Button = ({ children, type, btnFunction, buttonStyle, buttonSize, text }) => {
+  return <button type={type} onClick={() => btnFunction()}>{text}</button>;
 };
+
 
 export default Button;
 

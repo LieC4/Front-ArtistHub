@@ -1,47 +1,49 @@
 .home-img {
-    margin: 20px 0 20px 20px;
-  
-    width: 70vh;
-  }
+  margin: 10px;
 
-  .img {
-    width: 50%;
-  }
+  width: 100%;
+}
 
-  
+img {
+  width: 50%;
+  border-radius: 10px;
+}
+
+
 .home-link {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: stretch;
-    color: aliceblue;
-    background-color: var(--background);
-    width: 35%;
-    margin: 20px 0 20px 20px;
-    gap: 3rem;
-    font-size: 30px;
-  }
-  
-  .home-link .link :hover {
-    color: aliceblue;
-  }
-  
-  h1 {
-    margin-top: 50px;
-    color: var( --backgrounddos)
-  }
-  
-  .home-link h2 {
-    color: var(--text-primary);
-  }
-  
-  p {
-    font-size: 16px;
-    color: var( --text-primary)
-  }
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: stretch;
+  color: aliceblue;
+  background-color: var(--background);
+  width: 40%;
+  margin: 10px 0 10px 10px;
+  gap: 1rem;
+  font-size: 20px;
+  border-radius: 10%;
+}
+
+.home-link .link :hover {
+  color: aliceblue;
+}
+
+h1 {
+  margin-top: 20px;
+  color: var( --backgrounddos)
+}
+
+.home-link h2 {
+  color: var(--text-primary);
+}
+
+p {
+  font-size: 16px;
+  color: var( --text-primary)
+}
 
 .home {
-    background: var(--backgroundGeneral);
-    padding-top: 30px;
-    padding-bottom: 30px;
+  background: var(--backgroundGeneral);
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
