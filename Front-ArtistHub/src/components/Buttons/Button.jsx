@@ -2,28 +2,33 @@ import React from "react";
 import "./Button.css"
 
 const STYLES = [
-  "btn--primary--solid",
-  "btn--formulary--solid",
-  "btn--new--solid",
-  "btn--edit--solid",
-  "btn--delete--solid",
+  "primary",
+  "formulary",
+  "new",
+  "edit",
+  "delete",
+  "artist"
 ];
 
 const SIZES = [
-  "btn--small",
-  "btn--medium"
+  "small",
+  "medium",
+  "large"
 ];
 
 const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => {
 
-  const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0]
+  const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0];
+
+  const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
   return (
-    <button onClick={onClick} type={type}>
-      {children}
-    </button>
+    <div>
+      <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} onClick={onClick} type={type}>
+        {children}
+      </button>
+    </div>
   )
 };
-
 
 export default Button;

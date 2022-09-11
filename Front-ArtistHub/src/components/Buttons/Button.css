@@ -1,0 +1,59 @@
+.btn {
+    font-family: 'Anek Telugu', sans-serif;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/*BUTTON COLOURS*/
+.primary {
+    background-color: var(--text-primary);
+    color: var(--background);
+    border: none;
+    font-weight: bold;
+}
+.formulary {
+    background-color: var(--text-primary);
+    color: var(--background);
+    border: none;
+    font-weight: bold;
+}
+.new {
+    background-color: var(--backgroundTres);
+    color: var(--background);
+    border: none;
+    font-weight: bold;
+}
+.edit {
+    background-color: var(--backgroundTres);
+    color: var(--background);
+    border: none;
+    font-weight: bold;
+}
+.delete {
+    background-color: var(--backgrounddos);
+    color: var(--background);
+    border: none;
+    font-weight: bold;
+}
+.artist {
+    background-color: var(--backgrounddos);
+    color: var(--background);
+    border: none;
+    font-weight: bold;
+}
+
+/*BUTTON SIZES*/
+.small {
+    padding: 5px 10px;
+    font-size: 18px;
+    
+}
+.medium {
+    padding: 10px 30px;
+    font-size: 20px;
+}
+.large {
+    padding: 15px 40px;
+    font-size: 28px;
+}

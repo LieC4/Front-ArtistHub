@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from "../../components/theme";
 
 const Home = () => {
+
   return (
     <section className="home">
     

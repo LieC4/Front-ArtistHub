@@ -1,0 +1,23 @@
+.input_group {
+    margin-top: 20px;
+    padding: 0 30;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.input_component {
+    font-size: 15px;
+    color: var(--backgroundGeneral);
+    border: 2px solid var(--backgroundGeneral);
+    border-radius: 4px;
+    background: var(--backgroundGeneral);
+}
+
+.label_component {
+    padding-right: 4px;
+    font-size: 20px;
+    color: var(--text-primary);
+    
+}

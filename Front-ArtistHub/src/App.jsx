@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { JwtContextProvider } from "./contexts/jwtContext";
 import useLocalStorage from "use-local-storage";
-import Button from "./components/Buttons/Button";
 import Home from "./pages/Home/Home"
 import Login from "./pages/Login/Login"
 import Profile from "./pages/Profile/Profile"
@@ -31,9 +30,8 @@ function App() {
     <JwtContextProvider>
     <div className="App" data-theme={theme}>
     <Router>
-
-          <Header switchTheme={switchTheme}/>
-          <Routes>
+        <Header switchTheme={switchTheme}/>
+      <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -45,11 +43,8 @@ function App() {
           <Route path="/profile/:id/medias" element={<Media />} />
           <Route path="/profile/:id/medias/:id" element={<MediaDetail />} />
           <Route path="/artists" element={<ArtistCards />} />
-          </Routes>
-          <Footer />
-
-
-      
+      </Routes>
+        <Footer />
     </Router>
     </div>
     </JwtContextProvider>
