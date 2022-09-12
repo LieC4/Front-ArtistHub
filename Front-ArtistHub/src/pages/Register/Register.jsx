@@ -3,82 +3,91 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Buttons/Button';
-import Input from '../../components/Inputs/Input';
 import { API } from "../../services/API";
+import Input from "../../components/Inputs/Input"
 import "./Register.css"
+import Formulario from '../../components/Inputs/Input';
 
 const Register = () => {
   const { register, handleSubmit } = useForm();
-  const [signupInput, setSignUpInput] = useState({
+  const [datos, setDatos] = useState({
     username: "",
     password: "",
     email: "",
-    userType: "",
-  });
+    userType: ""
+  })
+
+  const handleInputChange = (event) => {
+    // console.log(event.target.name)
+    // console.log(event.target.value)
+    setDatos({
+        ...datos,
+        [event.target.name] : event.target.value
+    })
+  }
+
   let navigate = useNavigate();
 
   const formSubmitUser = (data) => {
-    const formData = new FormData();
-    formData.append("username", data.username);
-    formData.append("password", data.password);
-    formData.append("email", data.email);
-    formData.append("userType", data.userType);
-    
-    API.post("/users/register", formData).then((res) => {
+    console.log(data)
+    API.post("/users/register", data).then((res) => {
       if (res) {
         navigate("/login");
       }
     })
   }
+
   return (
-    <section className="register">
-      <h2>Please register:</h2>
-      <form onSubmit={handleSubmit(formSubmitUser)}>
-        <div className='boxuno'>
-          <Input
-            nameLabel="Username"
-            type="username"
-            id="username"
-            placeholder=""
-            defaultValues={signupInput.username}
-            setter={setSignUpInput}
-            {...register("username")}
-          />
-          <Input
-            nameLabel="Password"
-            type="password"
-            id="password"
-            placeholder=""
-            defaultValues={signupInput.password}
-            setter={setSignUpInput}
-            {...register("password")}
-          />
-          <Input
-            nameLabel="E-mail"
-            type="email"
-            id="email"
-            placeholder=""
-            defaultValues={signupInput.email}
-            setter={setSignUpInput}
-            {...register("email")}
-          />
-          <div className="select_container">
-            <label className="label_select" htmlFor="userType">User Type</label>
-            <select style={selectStyle} className="select" {...register("userType")}>
-              <option value="customer">Customer</option>
-              <option value="musician">Musician</option>
-              <option value="painter">Painter</option>
-              <option value="designer">Designer</option>
-            </select>
-          </div>
-          <div className='button_container'>
-            <Button type="submit" buttonStyle="formulary"     buttonSize="medium" >
-              Submit
-            </Button>
-          </div>
-        </div>
-      </form>
-    </section>
+  <section className="register">
+    <form style={formStyle} onSubmit={handleSubmit(formSubmitUser)}>
+      <div className="boxuno">
+        <Input
+          label={"Username"}
+          type={"text"} 
+          placeholder={"Username"} 
+          name={"username"} 
+          onChange={handleInputChange}
+          {...register("username")}
+        />
+      </div>
+      <div className="boxuno">
+        <Input
+          label={"Password"}
+          type={"password"} 
+          placeholder={"Example123!*$"} 
+          name={"password"} 
+          onChange={handleInputChange}
+          {...register("password")}
+        />
+      </div>
+      <div className="boxuno">
+        <Input
+          label={"E-mail"}
+          type={"email"} 
+          placeholder={"example@e-mail.com"} 
+          name={"email"} 
+          onChange={handleInputChange}
+          {...register("email")}
+        />
+      </div>
+   <div className="select_container">
+      <label className="label_select" htmlFor="userType">User Type</label>
+      <select style={selectStyle} className="select" {...register("userType")}>
+        <option value="select...">Select...</option>
+        <option value="customer">Customer</option>
+        <option value="musician">Musician</option>
+        <option value="painter">Painter</option>
+        <option value="designer">Designer</option>
+      </select>
+    </div>
+  <br />
+    <Button type="submit" buttonStyle="formulary" buttonSize="medium" >
+        Submit
+    </Button>
+    </form>
+  </section>
+    
+    
   )
 }
 
@@ -92,5 +101,12 @@ const selectStyle = {
   width: "100px",
   
 }
+
+const formStyle = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+};
 
 export default Register

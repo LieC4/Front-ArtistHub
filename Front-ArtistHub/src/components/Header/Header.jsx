@@ -19,8 +19,6 @@ const Header = ({switchTheme}) => {
                 <div className="buscar">
                 <SearchBar/>
                 </div>
-                
-                
                 <ul className="nav">
                     <li className="li-home">
                         <Link to="/">Home</Link>
@@ -29,9 +27,14 @@ const Header = ({switchTheme}) => {
                         <Link to="/artists">Artists</Link>
                     </li>
                     {user ? (
+                <>
                     <li>
                         <Link to="/profile">Profile</Link>
                     </li>
+                    <li>
+                        <Button type="button" onClick={() => logout() & navigate("/")}>Logout</Button>
+                    </li>
+                </>
                     ) : null}
                 </ul>
                 <div className="control">
@@ -43,8 +46,6 @@ const Header = ({switchTheme}) => {
                 <img src={user?.avatar} alt="Artist Avatar" />
             ) : null}
 
-            <Button btnFunction={logout() & navigate("/")} text="Logout"/>
-
             </>
             ) : (
             <ul className="control-ul">
@@ -54,8 +55,6 @@ const Header = ({switchTheme}) => {
             <li className="control-li">
                 <Link to="/login">Login</Link>
             </li>
-
-
             </ul>
         )}
                 </div>

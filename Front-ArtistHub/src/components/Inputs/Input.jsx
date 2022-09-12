@@ -1,45 +1,27 @@
-import React from 'react'
+import React, {Fragment, useState} from 'react';
 
-const Input = React.forwardRef((props, ref) => {
-    const { nameLabel, type, id, placeholder, keyState, setter, defaultValues } = props;
-
-    const handleChange = (e) => {
-        setter({ ...defaultValues, [e.target.name]: e.target.value });
-    };
-  return (
-    <>
-        <label style={labelStyle} htmlFor={id}>
-            {nameLabel}
-        </label>
-    {type === "textarea" ? (
-        <textarea 
-            className='textarea_field' 
-            ref={ref}
-            role={id}
-            value={keyState}
-            onChange={handleChange}
-            type={type}
-            id={id}
-            name={id}
-            placeholder={placeholder}
-            style={inputStyle}
-        />
-        ) : (
-        <input
-            ref={ref}
-            role={id}
-            value={keyState}
-            onChange={handleChange}
-            type={type}
-            id={id}
-            name={id}
-            placeholder={placeholder}
-            style={inputStyle}
-        />
-        )}
-    </>
-  );
-});
+const Input = React.forwardRef((props, ref, ...rest) => {
+    const {label, type, name, onChange, placeholder} = props
+  
+    return (
+      <>
+          <label style={labelStyle} htmlFor={label}>
+              {label}
+          </label>
+          <input
+              ref={ref}
+              style={inputStyle} 
+              type={type} 
+              name={name}
+              placeholder={placeholder} 
+              onChange={onChange}
+              {...rest}
+          />
+      </>
+    );
+  });
+ 
+  export default Input
 
 const labelStyle = {
     marginTop: 5
@@ -52,8 +34,6 @@ const inputStyle = {
     borderBottomWidth: "2px",
     transition: "all 0.3s ease",
     padding: "5px",
-    width: "200px",
-    
+    width: "200px",  
 }
 
-export default Input
