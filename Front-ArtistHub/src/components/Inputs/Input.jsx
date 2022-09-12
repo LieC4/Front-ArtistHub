@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Input = React.forwardRef((props, ref) => {
-    const { nameLabel, type, id, placeholder, keyState, setter, defaultValues  } = props;
+    const { nameLabel, type, id, placeholder, keyState, setter, defaultValues } = props;
 
     const handleChange = (e) => {
         setter({ ...defaultValues, [e.target.name]: e.target.value });
@@ -11,6 +11,20 @@ const Input = React.forwardRef((props, ref) => {
         <label style={labelStyle} htmlFor={id}>
             {nameLabel}
         </label>
+    {type === "textarea" ? (
+        <textarea 
+            className='textarea_field' 
+            ref={ref}
+            role={id}
+            value={keyState}
+            onChange={handleChange}
+            type={type}
+            id={id}
+            name={id}
+            placeholder={placeholder}
+            style={inputStyle}
+        />
+        ) : (
         <input
             ref={ref}
             role={id}
@@ -22,6 +36,7 @@ const Input = React.forwardRef((props, ref) => {
             placeholder={placeholder}
             style={inputStyle}
         />
+        )}
     </>
   );
 });
