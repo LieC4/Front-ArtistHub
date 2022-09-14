@@ -12,6 +12,8 @@ import Media from "./pages/Media/Media"
 import MediaDetail from "./pages/MediaDetail/MediaDetail"
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer";
+import RequireAuth from "./components/RequiredAuth";
+import ProfileEdit from "./pages/ProfileEdit/ProfileEdit";
 
 
 
@@ -33,7 +35,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/profile" 
+          element={
+          <RequireAuth>
+            <Profile />
+          </RequireAuth>
+          } />
           <Route path="/profile/:id/projects" element={<Projects />} />
           <Route path="/profile/:id/projects/:id" element={<ProjectDetail />} />
           <Route path="/profile/:id/medias" element={<Media />} />

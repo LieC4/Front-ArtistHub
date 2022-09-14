@@ -19,7 +19,7 @@ export const JwtContextProvider = ({ children }) => {
   const logout = () => {
     setUser(null);
     setJwt(null);
-    localStorage.removeItem("users");
+    localStorage.removeItem("user");
     localStorage.removeItem("token");
   };
 

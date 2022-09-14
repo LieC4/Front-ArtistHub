@@ -4,9 +4,8 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Buttons/Button';
 import { API } from "../../services/API";
-import Input from "../../components/Inputs/Input"
-import "./Register.css"
-import Formulario from '../../components/Inputs/Input';
+import Input from "../../components/Inputs/Input";
+import "./Register.css";
 
 const Register = () => {
   const { register, handleSubmit } = useForm();
@@ -98,8 +97,7 @@ const selectStyle = {
   borderBottomWidth: "2px",
   transition: "all 0.3s ease",
   padding: "5px",
-  width: "100px",
-  
+  width: "116px",
 }
 
 const formStyle = {

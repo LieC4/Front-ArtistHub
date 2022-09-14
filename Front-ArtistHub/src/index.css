@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@200;300;400;700&display=swap');
 
+:root {
+  --background: #f9faff;
+  --primary: #292325;
+  --secondary: #3f9baf;
+  --highlight: #46b4cd;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +17,7 @@
 a {
   text-decoration: none;
   color: inherit;
+  transition: all 0.2s ease-in-out;
 }
 
 li {
@@ -21,111 +29,11 @@ html {
 }
 
 body {
-  background: var(--backgroundGeneral);
-}
-section {
-  min-height: 75vh;
+  background-color: var(--background);
+  color: var(--primary);
 }
 
 
 
-a {
-  transition: all 0.2s ease-in-out;
-}
-
-strong {
-  color: #fe4107;
-}
-
-/*button {
-  color: #fffbee;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  outline: none;
-  border: none;
-  color: #ff6892;
-  border: none;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 5px;
-  background: var(--text-primary);
-  transition: all 0.3s ease;
-  font-weight: bolder;
-  border-color: var(var(--text-primary));
-}*/
-
-.mode {
-  background-color: var(--backgroundTres);
-  width: 100%;
-  border-top: solid 1px;
-  border-bottom: solid 1px;
-  color: #2a3f69;
-}
-
-[data-theme="🌚"] {
-  --background: #c6baba;
-  --backgroundGeneral: #ececf2;
-  --backgrounddos: #3f9baf;
-  --backgroundTres: #9175b5;
-  --text-primary: #252428;
-}
-
-[data-theme="☀️"] {
-  --background: #111417;
-  --backgroundGeneral: #3f3f40;
-  --backgrounddos: #f47623;
-  --backgroundTres: #f6eddb;
-  --text-primary: #f9a549;
-}
-
-@media only screen and (max-width: 750px) {
-  .nav {
-    font-size: 12px;
-    gap: 1rem;
-  }
-  .control {
-    margin-right: 20px;
-  }
-  .home-img {
-    margin: 5px;
-  }
-  .home-link {
-    padding-bottom: 100px;
-    margin-left: 250px;
-  }
-  .home-link p {
-    font-size: 12px;
-    padding: 10px;
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  body {
-    margin-left: 10px;
-  }
-  .home-link {
-    margin-left: 150px;
-    
-  }
-  .logo {
-    width: 50px;
-    height: 50px;
-    padding: 5px;
-  }
-  .register form {
-    display: flex;
-    flex-direction: column;
-  }
-  .profile img {
-    display: none;
-  }
-
-  .home-img {
-   display: none;
 
   
-}
-
-
-  }

@@ -38,7 +38,6 @@ const Header = ({switchTheme}) => {
                     ) : null}
                 </ul>
                 <div className="control">
-                    {/*TODO: Revisar al hacer login y register*/}
             {user ? (
             <>
             <p>{user.username}</p>

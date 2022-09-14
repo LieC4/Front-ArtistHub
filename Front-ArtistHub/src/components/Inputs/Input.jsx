@@ -1,22 +1,35 @@
-import React, {Fragment, useState} from 'react';
+import React from 'react';
 
 const Input = React.forwardRef((props, ref, ...rest) => {
-    const {label, type, name, onChange, placeholder} = props
+    const {label, type, name, onChange} = props
   
     return (
       <>
           <label style={labelStyle} htmlFor={label}>
               {label}
           </label>
-          <input
-              ref={ref}
-              style={inputStyle} 
-              type={type} 
-              name={name}
-              placeholder={placeholder} 
-              onChange={onChange}
-              {...rest}
-          />
+          {type === "textarea" ? (
+        <textarea 
+            className='textarea_field' 
+            ref={ref}
+            style={inputStyle} 
+            type={type} 
+            placeholder={name} 
+            name={name} 
+            onChange={onChange}
+            {...rest}
+        />
+        ) : (
+        <input
+            ref={ref}
+            style={inputStyle} 
+            type={type} 
+            placeholder={name} 
+            name={name} 
+            onChange={onChange}
+            {...rest}
+        />
+        )}
       </>
     );
   });

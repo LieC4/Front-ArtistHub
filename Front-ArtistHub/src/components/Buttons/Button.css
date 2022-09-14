@@ -7,7 +7,7 @@
 
 /*BUTTON COLOURS*/
 .primary {
-    background-color: var(--text-primary);
+    background-color: var(--primary);
     color: var(--background);
     border: none;
     font-weight: bold;
@@ -47,13 +47,16 @@
 .small {
     padding: 5px 10px;
     font-size: 18px;
+    border-radius: 6px;
     
 }
 .medium {
     padding: 10px 30px;
     font-size: 20px;
+    border-radius: 6px;
 }
 .large {
     padding: 15px 40px;
     font-size: 28px;
+    border-radius: 6px;
 }

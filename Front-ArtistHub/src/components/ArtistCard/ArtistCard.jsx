@@ -1,11 +1,8 @@
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { JwtContext } from "../contexts/jwtContext";
 import { useState } from "react";
 import "./ArtistCard.css"
 
 const ArtistCard = ({ user }) => {
-  const { user, setEditingUser } = useContext(JwtContext);
   const [Encuesta, setEncuesta] = useState("");
   let navigate = useNavigate();
 

@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router-dom'
 import Button from '../../components/Buttons/Button'
 import Input from '../../components/Inputs/Input'
 import { JwtContext } from '../../contexts/jwtContext'
-import "./Profile.css"
+import "./ProfileEdit.css"
 
 
-const Profile = () => {
+const ProfileEdit = () => {
     const { user, logout } = useContext(JwtContext);
     const { register, handleSubmit } = useForm();
     const [datos, setDatos] = useState({
@@ -40,19 +40,6 @@ const Profile = () => {
 
     const defaultValues = {
         username: user.username,
-        password: user.password,
-        email: user.email,
-        avatar: user.avatar,
-        userType: user.userType,
-        projects: user.projects,
-        favProjects: user.favProjects,
-        medias: user.medias,
-        userIntro: user.userIntro,
-        company: user.company,
-        location: user.location,
-        website: user.website,
-        twitter: user.twitter,
-        linkedin: user.linkedin,
     };
 
     const formSubmit = (data) => {
@@ -251,9 +238,6 @@ const Profile = () => {
         <Button type="submit" buttonStyle="formulary" buttonSize="medium" >
           Edit Profile
         </Button>
-        <Button type="submit" buttonStyle="formulary" buttonSize="medium" onClick={() => deleteUser()} >
-          Delete Profile
-        </Button>
         </form>
     </section>
   )
@@ -276,4 +260,4 @@ const formStyle = {
     justifyContent: "center",
   };
 
-export default Profile
+export default ProfileEdit
