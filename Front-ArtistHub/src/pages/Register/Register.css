@@ -28,7 +28,6 @@
   .boxuno_register {
     display: flex;
     flex-direction: column;
-  
     margin-bottom: 10px;
     gap: 0.5rem;
     margin-left: 10px;
@@ -58,10 +57,14 @@
     color: var(--backgroundGeneral);
 }
 
-.label_select {
+.label_select_register {
     padding-right: 0.5rem;
     font-size: 15px;
-    color: #ececf2;
-    
+    color: var(--background);    
 }
 
+.button_container_register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

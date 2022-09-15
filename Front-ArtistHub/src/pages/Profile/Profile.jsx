@@ -17,9 +17,6 @@ const Profile = () => {
     email: "",
     avatar: "",
     userType: "",
-    projects: [""],
-    favProjects: [""],
-    medias: [""],
     userIntro: "",
     company: "",
     location: "",
@@ -135,7 +132,7 @@ const Profile = () => {
               {...register("avatar")}
             />
             <div className="select_container">
-              <label className="label_select" htmlFor="userType">
+              <label className="label_select_profile" htmlFor="userType">
                 Change your type?
               </label>
               <select
@@ -230,7 +227,7 @@ const Profile = () => {
 const selectStyle = {
   outlineStyle: "none",
   borderRadius: "4px",
-  border: "solid 1px var(--text-primary)",
+  border: "solid 1px var(--background)",
   borderBottomWidth: "2px",
   transition: "all 0.3s ease",
   padding: "5px",

@@ -6,6 +6,7 @@ import Button from "../../components/Buttons/Button";
 import { API } from "../../services/API";
 import Input from "../../components/Inputs/Input";
 import "./Register.css";
+//TODO: EL FORMULARIO NO SE ALINEA DEL TODO AL CENTRO, PREGUNTAR A ANTONIO
 
 const Register = () => {
   const { register, handleSubmit } = useForm();
@@ -75,7 +76,7 @@ const Register = () => {
           />
         </div>
         <div className="select_container">
-          <label className="label_select" htmlFor="userType">
+          <label className="label_select_register" htmlFor="userType">
             User Type
           </label>
           <select
@@ -91,9 +92,11 @@ const Register = () => {
           </select>
         </div>
         <br />
-        <Button type="submit" buttonStyle="formulary" buttonSize="medium">
-          Submit
-        </Button>
+        <div className="button_container_register">
+          <Button type="submit" buttonStyle="formulary" buttonSize="medium">
+            Submit
+          </Button>
+        </div>
       </form>
     </section>
   );
@@ -102,7 +105,7 @@ const Register = () => {
 const selectStyle = {
   outlineStyle: "none",
   borderRadius: "4px",
-  border: "solid 1px var(--text-primary)",
+  border: "solid 1px var(--background)",
   borderBottomWidth: "2px",
   transition: "all 0.3s ease",
   padding: "5px",

@@ -1,6 +1,5 @@
 .edit_profile {
     background: var(--background);
-    padding-top: 30px;
     padding-bottom: 30px;
   }
   .edit_profile {
@@ -10,14 +9,12 @@
   }
   
   .profile_form {
-    border: solid 1px var(--text-primary);
     max-width: 300px;
     width: 100%;
     color: var(--background);
-    padding: 25px 30px;
+    padding: 30px;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
@@ -77,10 +74,13 @@
     font-size: 15px;
     color: var(--backgroundGeneral);
 }
+  .select {
+    border: solid 1px var(--background);
+  }
 
-.label_select {
+.label_select_profile {
     padding-right: 0.5rem;
     font-size: 15px;
-    color: #ececf2;
+    color: var(--background);
     
 }
