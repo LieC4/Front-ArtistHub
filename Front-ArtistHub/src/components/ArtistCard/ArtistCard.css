@@ -16,6 +16,7 @@
 .artistcard .username {
   text-align: center;
   padding: 3px;
+  color: var(--background);
 }
 .artistcard img {
   border-radius: 0.5rem;

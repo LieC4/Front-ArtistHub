@@ -1,6 +1,6 @@
 import SearchBar from "../SearchBar/SearchBar";
 import { useEffect, useState } from "react";
-import { API } from "../services/API";
+import { API } from '../services/API';
 
 const Filter = () => {
 const [allInfo, setAllInfo] = usteState([]);
