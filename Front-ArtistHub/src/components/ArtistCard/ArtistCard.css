@@ -6,7 +6,7 @@
   gap: 0.4rem;
   padding: 0.8rem;
   text-align: left;
-  background-color: var(--backgroundGeneral);
+  background-color: var(--primary);
   color: var(--text-primary);
   border-radius: 0.5rem;
   box-shadow: 0 0 2em rgba(0, 0, 0, 0.317);
