@@ -1,37 +1,57 @@
 .edit_profile {
-    background: var(--backgroundGeneral);
+    background: var(--background);
     padding-top: 30px;
     padding-bottom: 30px;
   }
   .edit_profile {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   
-  .edit_profile form {
+  .profile_form {
     border: solid 1px var(--text-primary);
     max-width: 300px;
     width: 100%;
-    color: #ececf2;
+    color: var(--background);
     padding: 25px 30px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
     margin-bottom: 20px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     font-weight: bolder;
-    background-color: var(--backgrounddos);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+
+  .boxuno_boxdos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 2rem;
   }
   .boxuno {
     display: flex;
     flex-direction: column;
-  
+    background-color: var(--primary);
     margin-bottom: 10px;
     gap: 0.5rem;
     margin-left: 10px;
+    padding: 50px;
+    border-radius: 6px;
+  }
+  .boxdos {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary);
+    margin-bottom: 10px;
+    gap: 0.5rem;
+    margin-left: 10px;
+    padding: 50px;
+    border-radius: 6px;
   }
 
   .button_container {
@@ -40,10 +60,10 @@
     justify-content: center;
   }
   
-  h2 {
+  .profile_title {
     font-weight: bolder;
-    color: var(--backgrounddos);
-    margin: 10px;
+    color: var(--primary);
+    margin-bottom: 20px;
   }
 
 .select_container {

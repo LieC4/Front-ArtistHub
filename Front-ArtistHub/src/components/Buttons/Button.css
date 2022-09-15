@@ -6,41 +6,75 @@
 }
 
 /*BUTTON COLOURS*/
+
+.headerbutton {
+    background-color: var(--background);
+    color: var(--primary);
+    border: none;
+    font-weight: bold;
+}
+.headerbutton:hover {
+    background-color: var(--headerhighlight);
+}
+
 .primary {
-    background-color: var(--primary);
+    background-color: var(--secondary);
     color: var(--background);
     border: none;
     font-weight: bold;
 }
+.primary:hover {
+    background-color: var(--highlight);
+}
+
 .formulary {
-    background-color: var(--text-primary);
+    background-color: var(--secondary);
     color: var(--background);
     border: none;
     font-weight: bold;
 }
+.formulary:hover {
+    background-color: var(--highlight);
+}
+
 .new {
-    background-color: var(--backgroundTres);
+    background-color: var(--secondary);
     color: var(--background);
     border: none;
     font-weight: bold;
 }
+.new:hover {
+    background-color: var(--highlight);
+}
+
 .edit {
-    background-color: var(--backgroundTres);
+    background-color: var(--secondary);
     color: var(--background);
     border: none;
     font-weight: bold;
 }
+.edit:hover {
+    background-color: var(--highlight);
+}
+
 .delete {
-    background-color: var(--backgrounddos);
+    background-color: var(--secondary);
     color: var(--background);
     border: none;
     font-weight: bold;
 }
+.delete:hover {
+    background-color: var(--highlight);
+}
+
 .artist {
-    background-color: var(--backgrounddos);
+    background-color: var(--secondary);
     color: var(--background);
     border: none;
     font-weight: bold;
+}
+.artist:hover {
+    background-color: var(--highlight);
 }
 
 /*BUTTON SIZES*/

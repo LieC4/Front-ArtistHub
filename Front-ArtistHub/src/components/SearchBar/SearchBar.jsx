@@ -1,14 +1,15 @@
-import "./Searchbar.css"
+import "./Searchbar.css";
 
-const SearchBar = ({setFilterWord}) => {
-    return (
-        <input 
-        type="text"
-        id="search"
-        className="searchbar"
-        onChange={() => setFilterWord(search.value.toLowerCase())}
-        placeholder="Search by..." />
-    )
-}
+const SearchBar = ({ setFilterUser }) => {
+  return (
+    <input
+      type="text"
+      id="search"
+      className="searchbar"
+      onChange={(ev) => setFilterUser(ev.target.value)}
+      placeholder="Search by..."
+    />
+  );
+};
 
 export default SearchBar;

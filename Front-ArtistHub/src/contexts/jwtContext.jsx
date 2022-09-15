@@ -15,6 +15,8 @@ export const JwtContextProvider = ({ children }) => {
   });
 
   const [editingUser, setEditingUser] = useState({});
+  const [editProject, setEditProject] = useState({});
+  const [editMedia, setEditMedia] = useState({});
 
   const logout = () => {
     setUser(null);
@@ -33,6 +35,10 @@ export const JwtContextProvider = ({ children }) => {
         logout,
         editingUser,
         setEditingUser,
+        editProject,
+        setEditProject,
+        editMedia,
+        setEditMedia,
       }}
     >
       {children}

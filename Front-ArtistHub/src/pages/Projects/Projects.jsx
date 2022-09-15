@@ -1,17 +1,27 @@
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { JwtContext } from "../../contexts/jwtContext";
 
 const Projects = () => {
-    return (
-      <section className="login">
-   
-        <div className="login-link">
-          <h1>ArtistHub</h1>
-          <h2>Join us</h2>
-          <p>
-            Lorem Impsum Lorem Impsun
-          </p>
-        </div>
-      </section>
-    );
+  const { user } = useContext(JwtContext);
+  const { username } = useParams();
+
+  const [allProjects, setAllProjects] = useState([]);
+
+  const getProjectsByUsername = async () => {
+    API.get(`/users/projects/${username}`).then((res) => {
+      setAllProjects(res.data.data.projects);
+    });
   };
-  
-  export default Projects;
+
+  useEffect(() => {
+    getProjectsByUsername();
+  }, []);
+
+  return <section></section>;
+};
+
+export default Projects;

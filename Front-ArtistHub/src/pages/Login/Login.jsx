@@ -4,10 +4,24 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { API } from "../../services/API";
 import Swal from "sweetalert2";
-import "./Login.css"
+import "./Login.css";
+import Button from "../../components/Buttons/Button";
+import Input from "../../components/Inputs/Input";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
+  const [datos, setDatos] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleInputChange = (event) => {
+    setDatos({
+      ...datos,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   let navigate = useNavigate();
   const { setJwt, setUser } = useContext(JwtContext);
   const formSubmit = (formData) => {
@@ -34,35 +48,36 @@ const Login = () => {
   };
   return (
     <section className="login">
-    <h2>Please log in:</h2>
-
-<form onSubmit={handleSubmit(formSubmit)}>
-  <div className="boxuno">
-    <label htmlFor="username">Username</label>
-    <input
-      type="text"
-      id="username"
-      name="username"
-      {...register("username")}
-    />
-  </div>
-  <div className="boxuno">
-    <label htmlFor="password">Password</label>
-    <input
-      type="password"
-      id="password"
-      name="password"
-      {...register("password")}
-    />
-  </div>
-  <button className="Boton" type="submit">
-    Login
-  </button>
-</form>
-
+      <h2>Please log in:</h2>
+      <form className="login_form" onSubmit={handleSubmit(formSubmit)}>
+        <div className="boxuno_login">
+          <Input
+            label={"Username"}
+            type={"text"}
+            placeholder={"Username"}
+            name={"username"}
+            onChange={handleInputChange}
+            {...register("username")}
+          />
+        </div>
+        <div className="boxuno_login">
+          <Input
+            label={"Password"}
+            type={"password"}
+            placeholder={"Example123!*$"}
+            name={"password"}
+            onChange={handleInputChange}
+            {...register("password")}
+          />
+        </div>
+        <div className="button_container">
+          <Button buttonSize="medium" buttonStyle="formulary" type="submit">
+            Login
+          </Button>
+        </div>
+      </form>
     </section>
   );
 };
 
 export default Login;
-
