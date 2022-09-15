@@ -72,7 +72,7 @@ header nav ul {
   text-indent: -9999px;
   width: 60px;
   height: 30px;
-  background: grey;
+  background: var(--primary);
   display: block;
   border-radius: 30px;
   position: relative;
@@ -85,19 +85,19 @@ header nav ul {
   left: 5px;
   width: 20px;
   height: 20px;
-  background: rgb(41, 40, 45);
+  background: var(--background);
   border-radius: 30px;
   transition: 0.3s;
 }
 
 .input:checked + label {
-  background: #f3f2f0;
+  background: var(--primary);
 }
 
 .input:checked + label:after {
   left: calc(100% - 5px);
   transform: translateX(-100%);
-  background: #c6baba;
+  background: var(--background);
 }
 
 .label:active:after {

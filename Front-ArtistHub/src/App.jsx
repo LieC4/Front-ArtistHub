@@ -13,6 +13,7 @@ import MediaDetail from "./pages/MediaDetail/MediaDetail";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import RequireAuth from "./components/RequiredAuth";
+import ArtistDetail from "./pages/ArtistDetail/ArtistDetail";
 
 function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -41,16 +42,14 @@ function App() {
               }
             />
             <Route path="/profile/:username/projects" element={<Projects />} />
-            <Route
-              path="/profile/:username/projects/:id"
-              element={<ProjectDetail />}
-            />
+            <Route path="/profile/projects/:id" element={<ProjectDetail />} />
             <Route path="/profile/:username/medias" element={<Media />} />
             <Route
               path="/profile/:username/medias/:id"
               element={<MediaDetail />}
             />
             <Route path="/artists" element={<ArtistCards />} />
+            <Route path="/artists/:username" element={<ArtistDetail />} />
           </Routes>
           <Footer />
         </Router>

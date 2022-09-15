@@ -1,27 +1,27 @@
 .artists {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
 
 
-  .artists h2 {
-    margin-top: 20px;
-    color: #605c5d;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  }
-  
-  .artists .galeria {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-  
-  .artists {
-    background-color: var(--background);
-    color: var(--text-primary);
-  }
+.artists h2 {
+  margin-top: 20px;
+  color: #605c5d;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.artists .galeria {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.artists {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
