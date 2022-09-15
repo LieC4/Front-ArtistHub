@@ -1,7 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./MediaCard.css";
 
-const MediaCard = ({ user, media }) => {
+const MediaCard = ({ byUsername, media }) => {
   let navigate = useNavigate();
 
   return (
@@ -26,14 +26,10 @@ const MediaCard = ({ user, media }) => {
       <p className="description">Created at: {media.createdAt}</p>
       <p className="description">Last update: {media.updatedAt}</p>
       <div>
-        <button
-          type="button"
-          onClick={() =>
-            navigate(`/profile/${user.username}/medias/${media._id}`)
-          }
-        >
-          See my media
-        </button>
+        <Link to={`/profile/medias/${media._id}`}>
+          {" "}
+          <button type="button">See my media</button>
+        </Link>
       </div>
     </figure>
   );

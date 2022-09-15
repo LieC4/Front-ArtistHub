@@ -44,10 +44,7 @@ function App() {
             <Route path="/profile/:username/projects" element={<Projects />} />
             <Route path="/profile/projects/:id" element={<ProjectDetail />} />
             <Route path="/profile/:username/medias" element={<Media />} />
-            <Route
-              path="/profile/:username/medias/:id"
-              element={<MediaDetail />}
-            />
+            <Route path="/profile/medias/:id" element={<MediaDetail />} />
             <Route path="/artists" element={<ArtistCards />} />
             <Route path="/artists/:username" element={<ArtistDetail />} />
           </Routes>
