@@ -14,6 +14,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import RequireAuth from "./components/RequiredAuth";
 import ArtistDetail from "./pages/ArtistDetail/ArtistDetail";
+import UserProjectDetail from "./pages/UserProjectDetail/UserProjectDetail";
+import UserMediaDetail from "./pages/UserMediaDetail/UserMediaDetail";
 
 function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -41,10 +43,13 @@ function App() {
                 </RequireAuth>
               }
             />
-            <Route path="/profile/:username/projects" element={<Projects />} />
-            <Route path="/profile/projects/:id" element={<ProjectDetail />} />
-            <Route path="/profile/:username/medias" element={<Media />} />
-            <Route path="/profile/medias/:id" element={<MediaDetail />} />
+            <Route
+              path="/profile/projects/:id"
+              element={<UserProjectDetail />}
+            />
+            <Route path="/profile/medias/:id" element={<UserMediaDetail />} />
+            <Route path="/artists/projects/:id" element={<ProjectDetail />} />
+            <Route path="/artists/medias/:id" element={<MediaDetail />} />
             <Route path="/artists" element={<ArtistCards />} />
             <Route path="/artists/:username" element={<ArtistDetail />} />
           </Routes>

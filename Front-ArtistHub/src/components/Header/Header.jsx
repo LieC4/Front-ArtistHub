@@ -42,27 +42,43 @@ const Header = ({ switchTheme }) => {
               </Button>
             </Link>
           </li>
-          <li>
-            <Link to="/profile">
-              <Button buttonStyle="headerbutton" buttonSize="small">
-                Profile
-              </Button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/login">
-              <Button buttonStyle="headerbutton" buttonSize="small">
-                Log in
-              </Button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/register">
-              <Button buttonStyle="headerbutton" buttonSize="small">
-                Register
-              </Button>
-            </Link>
-          </li>
+          {user ? (
+            <>
+              <li>
+                <Link to="/profile">
+                  <Button buttonStyle="headerbutton" buttonSize="small">
+                    Profile
+                  </Button>
+                </Link>
+              </li>
+              <li>
+                <Button
+                  buttonStyle="headerbutton"
+                  buttonSize="small"
+                  onClick={() => logout() & navigate("/login")}
+                >
+                  Logout
+                </Button>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/login">
+                  <Button buttonStyle="headerbutton" buttonSize="small">
+                    Log in
+                  </Button>
+                </Link>
+              </li>
+              <li>
+                <Link to="/register">
+                  <Button buttonStyle="headerbutton" buttonSize="small">
+                    Register
+                  </Button>
+                </Link>
+              </li>
+            </>
+          )}
           <li>
             <div className="upperside_toggle">
               <div className="toggle">

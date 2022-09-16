@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import "./ProjectCard.css";
+import "./UserProjectCard.css";
 import { Link } from "react-router-dom";
+import Button from "../Buttons/Button";
 
-const ProjectCard = ({ project }) => {
+const UserProjectCard = ({ project }) => {
   //console.log("este es el usuario", byUsername);
   let navigate = useNavigate();
 
@@ -29,13 +30,15 @@ const ProjectCard = ({ project }) => {
       <p className="description">Created at: {project.createdAt}</p>
       <p className="description">Last update: {project.updatedAt}</p>
       <div>
-        <Link to={`/artists/projects/${project._id}`}>
+        <Link to={`/profile/projects/${project._id}`}>
           {" "}
-          <button type="button">See my project</button>
+          <Button type="button" buttonStyle="primary" buttonSize="small">
+            See my project
+          </Button>
         </Link>
       </div>
     </figure>
   );
 };
 
-export default ProjectCard;
+export default UserProjectCard;

@@ -7,6 +7,8 @@ import Button from "../../components/Buttons/Button";
 import ProfileComponent from "../../components/ProfileComponent/ProfileComponent";
 import ProjectsComponent from "../../components/ProjectsComponent/ProjectsComponent";
 import MediaComponent from "../../components/MediaComponent/MediaComponent";
+import ArtitCards from "../ArtistCards/ArtistCards";
+
 const ArtistDetail = () => {
   const [byUsername, setbyUsername] = useState(undefined);
   const [showProjects, setShowProjects] = useState(false);

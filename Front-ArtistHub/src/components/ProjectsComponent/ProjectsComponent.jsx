@@ -8,6 +8,7 @@ import ProjectCard from "../../components/ProjectCard/ProjectCard";
 
 const ProjectComponent = ({ project }) => {
   const [allProjects, setallProjects] = useState([]);
+  console.log(allProjects);
   const [byUsername, setbyUsername] = useState(undefined);
 
   const { username } = useParams();
