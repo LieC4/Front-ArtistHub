@@ -15,6 +15,8 @@ const Artists = () => {
       user.userType.toLowerCase().includes(filterUser)
   );
 
+  
+
   const getAllUsers = async () => {
     API.get("/users").then((res) => {
       setallUsers(res.data.users);

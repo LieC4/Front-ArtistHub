@@ -78,6 +78,11 @@
 }
 
 /*BUTTON SIZES*/
+.diminute {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 15px;
+}
 .small {
     padding: 5px 10px;
     font-size: 18px;

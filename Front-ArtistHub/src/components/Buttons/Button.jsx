@@ -11,7 +11,7 @@ const STYLES = [
   "artist",
 ];
 
-const SIZES = ["small", "medium", "large"];
+const SIZES = ["diminute","small", "medium", "large"];
 
 const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => {
   const checkButtonStyle = STYLES.includes(buttonStyle)

@@ -76,84 +76,86 @@ const UserMediaDetail = () => {
 
   return (
     <section className="edit_media">
-      <div className="media_info_container">
-        <h2>{medio.mediaTitle}</h2>
-        <div>
-          <img src={medio.mediaImage} alt={medio.mediaTitle} />
-        </div>
-        <p>Spotify: {medio.mediaSpotify}</p>
-        <p>Videos: {medio.mediaVideo}</p>
-        <p>Description: {medio.mediaDescription}</p>
-      </div>
-
-      <div className="media_form_container">
-        <form
-          className="profile_form"
-          style={formStyle}
-          onSubmit={handleSubmit(formSubmit)}
-        >
-          <h2>Edit Media</h2>
-          <div className="boxuno_boxdos">
-            <div className="boxuno">
-              <Input
-                label={"Title"}
-                type={"text"}
-                placeholder={"mediaTitle"}
-                name={"mediaTitle"}
-                onChange={handleInputChange}
-                {...register("mediaTitle")}
-                defaultValue={defaultValue.mediaTitle}
-              />
-              <Input
-                label={"Description"}
-                type={"textarea"}
-                placeholder={"mediaDescription"}
-                name={"mediaDescription"}
-                onChange={handleInputChange}
-                {...register("mediaDescription")}
-                defaultValue={defaultValue.mediaDescription}
-              />
-              <Input
-                label={"Image"}
-                type={"file"}
-                placeholder={"mediaImage"}
-                name={"mediaImage"}
-                onChange={handleInputChange}
-                {...register("mediaImage")}
-              />
-              <Input
-                label={"Spotify"}
-                type={"text"}
-                placeholder={"mediaSpotify"}
-                name={"mediaSpotify"}
-                onChange={handleInputChange}
-                {...register("mediaSpotify")}
-                defaultValue={defaultValue.mediaSpotify}
-              />
-              <Input
-                label={"Video"}
-                type={"text"}
-                placeholder={"mediaVideo"}
-                name={"mediaVideo"}
-                onChange={handleInputChange}
-                {...register("mediaVideo")}
-                defaultValue={defaultValue.mediaVideo}
-              />
-            </div>
+      <div className="media_detail_wrapper">
+        <figure className="media_info_container">
+          <h2 className="media_title">{medio.mediaTitle}</h2>
+          <div className="media_img_container">
+            <img src={medio.mediaImage} alt={medio.mediaTitle} />
           </div>
+          <p>Spotify: {medio.mediaSpotify}</p>
+          <p>Videos: {medio.mediaVideo}</p>
+          <p>Description: {medio.mediaDescription}</p>
+        </figure>
 
-          <Button type="submit" buttonStyle="formulary" buttonSize="medium">
-            Save Changes
-          </Button>
-          <Button
-            type="submit"
-            buttonStyle="formulary"
-            buttonSize="medium"
-            onClick={() => deleteMedia()}
+        <div className="media_form_container">
+          <form
+            className="profile_form"
+            style={formStyle}
+            onSubmit={handleSubmit(formSubmit)}
           >
-            Delete Media
-          </Button>
-        </form>
+            <h2>Edit Media</h2>
+            <div className="boxuno_boxdos">
+              <div className="boxuno">
+                <Input
+                  label={"Title"}
+                  type={"text"}
+                  placeholder={"mediaTitle"}
+                  name={"mediaTitle"}
+                  onChange={handleInputChange}
+                  {...register("mediaTitle")}
+                  defaultValue={defaultValue.mediaTitle}
+                />
+                <Input
+                  label={"Description"}
+                  type={"textarea"}
+                  placeholder={"mediaDescription"}
+                  name={"mediaDescription"}
+                  onChange={handleInputChange}
+                  {...register("mediaDescription")}
+                  defaultValue={defaultValue.mediaDescription}
+                />
+                <Input
+                  label={"Image"}
+                  type={"file"}
+                  placeholder={"mediaImage"}
+                  name={"mediaImage"}
+                  onChange={handleInputChange}
+                  {...register("mediaImage")}
+                />
+                <Input
+                  label={"Spotify"}
+                  type={"text"}
+                  placeholder={"mediaSpotify"}
+                  name={"mediaSpotify"}
+                  onChange={handleInputChange}
+                  {...register("mediaSpotify")}
+                  defaultValue={defaultValue.mediaSpotify}
+                />
+                <Input
+                  label={"Video"}
+                  type={"text"}
+                  placeholder={"mediaVideo"}
+                  name={"mediaVideo"}
+                  onChange={handleInputChange}
+                  {...register("mediaVideo")}
+                  defaultValue={defaultValue.mediaVideo}
+                />
+              </div>
+            </div>
+
+            <Button type="submit" buttonStyle="formulary" buttonSize="medium">
+              Save Changes
+            </Button>
+            <Button
+              type="submit"
+              buttonStyle="formulary"
+              buttonSize="medium"
+              onClick={() => deleteMedia()}
+            >
+              Delete Media
+            </Button>
+          </form>
+        </div>
       </div>
     </section>
   );

@@ -2,13 +2,20 @@ import "./Searchbar.css";
 
 const SearchBar = ({ setFilterUser }) => {
   return (
+    <div className="searchBox">
     <input
       type="text"
       id="search"
-      className="searchbar"
+      className="searchInput"
       onChange={(ev) => setFilterUser(ev.target.value)}
-      placeholder="Search by..."
+      placeholder="Search"
     />
+    <button className="searchButton" href="#">
+    <i className="material-icons">
+      <img src="/assets/zoom-lens.png" alt="" />
+    </i>
+    </button>
+    </div>
   );
 };
 

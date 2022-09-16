@@ -2,12 +2,67 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./ArtistCard.css";
+import Button from "../Buttons/Button";
 
 const ArtistCard = ({ user }) => {
   const [Encuesta, setEncuesta] = useState("");
   let navigate = useNavigate();
 
   return (
+		<div className="card-container">
+			<article>
+      {" "}
+        {user.avatar != undefined ? (
+          <div>
+            <img src={user.avatar} alt={user.username} className="imagen"/>
+          </div>
+        ) : (
+          <div>
+            <img
+              src="https://cdn3.iconfinder.com/data/icons/rcons-user-profession/32/designer-512.png"
+              alt={user.username}
+            />
+          </div>
+        )}
+			</article>
+			<h1 className="bold-text">
+      {user.username}            <span className="normal-text">  Italy</span>
+			</h1>
+			<h2 className="normal-text">{user.userType}</h2>
+      <div className="divboton">
+        
+        <Button
+        buttonStyle="artist"
+        buttonSize="diminute"
+          type="button"
+          className="buttondetail"
+          onClick={() => navigate(`/artists/${user.username}`)}
+        >
+          Check profile
+        </Button>
+      </div>
+			<div className="social-container">
+				<div className="followers">
+        <a href="https://www.flaticon.es/iconos-gratis/gorjeo" title="gorjeo iconos"><img src="/assets/web.png" alt="Twitter" /></a>
+					<h2 className="smaller-text">Webiste</h2>
+				</div>
+				<div className="likes">
+        <a href="https://www.flaticon.es/iconos-gratis/gorjeo" title="gorjeo iconos"><img src="/assets/twitter.png" alt="Twitter" /></a>
+					<h2 className="smaller-text">Twitter</h2>
+				</div>
+				<div className="photos">
+        <a href="https://www.flaticon.es/iconos-gratis/gorjeo" title="gorjeo iconos"><img src="/assets/linkedin.png" alt="Twitter" /></a>
+					<h2 className="smaller-text">LinkedIn</h2>
+				</div>
+			</div>
+		</div>
+	);
+}
+
+export default ArtistCard;
+
+
+/*return (
     <figure className="artistcard">
       <h4 className="username">{user.username}</h4>
       <div>
@@ -25,10 +80,12 @@ const ArtistCard = ({ user }) => {
           </div>
         )}
       </div>
-      <h5 className="rol">Rol: {user.userType}</h5>
-      <div>
+      <div><h5 className="rol">I am a {user.userType}</h5></div>
+      <div className="divboton">
+        
         <button
           type="button"
+          className="buttondetail"
           onClick={() => navigate(`/artists/${user.username}`)}
         >
           See my profile
@@ -55,5 +112,4 @@ const ArtistCard = ({ user }) => {
     </figure>
   );
 };
-
-export default ArtistCard;
+*/

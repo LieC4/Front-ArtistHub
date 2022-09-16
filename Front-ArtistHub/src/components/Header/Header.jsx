@@ -10,11 +10,14 @@ const Header = ({ switchTheme }) => {
   const { user, logout } = useContext(JwtContext);
   let navigate = useNavigate();
 
+ 
+
   return (
     <header>
       <nav>
         <div className="upperside">
           <div className="logo_container">
+
             <img
               className="logo"
               src="/assets/ArtistHub-logo.png"
