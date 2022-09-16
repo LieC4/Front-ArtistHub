@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import { API } from "../../services/API";
 import UserMediaCard from "../UserMediaCard/UserMediaCard";
@@ -32,11 +32,11 @@ const UserMediasComponent = ({ media }) => {
             alt="logo"
           />
           <h2>{user.username}</h2>
-          {/*<Link to={"/profile/newproject"}>*/}
-          <Button buttonStyle="new" buttonSize="small">
-            New Media
-          </Button>
-          {/*</Link>*/}
+          <Link to={"/profile/newmedia"}>
+            <Button buttonStyle="new" buttonSize="small">
+              New Media
+            </Button>
+          </Link>
         </div>
         <div className="galeria">
           {byUsername.length ? (

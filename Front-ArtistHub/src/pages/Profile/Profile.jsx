@@ -27,7 +27,7 @@ const Profile = () => {
   };
   useEffect(() => {
     getByUsername();
-  }, []);
+  });
 
   return (
     <section className="artistdetail">

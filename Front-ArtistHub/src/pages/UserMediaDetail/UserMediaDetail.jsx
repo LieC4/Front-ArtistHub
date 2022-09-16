@@ -1,34 +1,171 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import { API } from "../../services/API";
 import "./UserMediaDetail.css";
 import { Link } from "react-router-dom";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import { useForm } from "react-hook-form";
+import Input from "../../components/Inputs/Input";
+import Button from "../../components/Buttons/Button";
+
+//TODO: PREGUNTAR SOBRE EL DAFAULTVALUES, QUE NO NOS ESTA FUNCIONANDO :/
 
 const UserMediaDetail = () => {
   const { id } = useParams();
   console.log(id);
   const [medio, setMedio] = useState("");
-  const getMedioById = async () => {
+  const getMediaoById = async () => {
     API.get(`/medias/${id}`).then((res) => {
       setMedio(res.data.media);
       console.log(res.data.media);
     });
   };
+
+  const { register, handleSubmit } = useForm();
+  const [datos, setDatos] = useState({
+    mediaTitle: "",
+    mediatDescription: "",
+    mediaSpotify: "",
+    mediaImage: "",
+    mediaVideo: "",
+  });
+
+  const handleInputChange = (event) => {
+    setDatos({
+      ...datos,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  let navigate = useNavigate();
+
+  const defaultValue = {
+    mediaTitle: medio.mediaTitle,
+    mediaDescription: medio.mediaDescription,
+    mediaSpotify: medio.mediaSpotify,
+    mediaVideo: medio.mediaVideo,
+  };
+
+  const formSubmit = (data) => {
+    const formData = new FormData();
+    formData.append("mediaTitle", data.mediaTitle);
+    formData.append("mediaDescription", data.mediaDescription);
+    formData.append("mediaSpotify", data.mediaSpotify);
+    formData.append("mediaImage", data.mediaImage[0]);
+    formData.append("mediaVideo", data.mediaVideo);
+
+    API.patch(`/medias/${medio._id}`, formData).then((res) => {
+      if (res) {
+        navigate("/profile");
+      }
+    });
+  };
+
+  const deleteMedia = () => {
+    API.delete(`/medias/${medio._id}`).then((res) => {
+      if (res) {
+        navigate("/profile");
+      }
+    });
+  };
+
   useEffect(() => {
-    getMedioById();
+    getMediaoById();
   }, []);
+
   return (
-    <section>
-      <h1>elias es un crack!</h1>
-      <h2>{medio.mediaTitle}</h2>
-      <img src={medio.mediaImage} alt={medio.mediaTitle} />
-      <h3>{medio.mediaDescription}</h3>
+    <section className="edit_media">
+      <div className="media_info_container">
+        <h2>{medio.mediaTitle}</h2>
+        <div>
+          <img src={medio.mediaImage} alt={medio.mediaTitle} />
+        </div>
+        <p>Spotify: {medio.mediaSpotify}</p>
+        <p>Videos: {medio.mediaVideo}</p>
+        <p>Description: {medio.mediaDescription}</p>
+      </div>
+
+      <div className="media_form_container">
+        <form
+          className="profile_form"
+          style={formStyle}
+          onSubmit={handleSubmit(formSubmit)}
+        >
+          <h2>Edit Media</h2>
+          <div className="boxuno_boxdos">
+            <div className="boxuno">
+              <Input
+                label={"Title"}
+                type={"text"}
+                placeholder={"mediaTitle"}
+                name={"mediaTitle"}
+                onChange={handleInputChange}
+                {...register("mediaTitle")}
+                defaultValue={defaultValue.mediaTitle}
+              />
+              <Input
+                label={"Description"}
+                type={"textarea"}
+                placeholder={"mediaDescription"}
+                name={"mediaDescription"}
+                onChange={handleInputChange}
+                {...register("mediaDescription")}
+                defaultValue={defaultValue.mediaDescription}
+              />
+              <Input
+                label={"Image"}
+                type={"file"}
+                placeholder={"mediaImage"}
+                name={"mediaImage"}
+                onChange={handleInputChange}
+                {...register("mediaImage")}
+              />
+              <Input
+                label={"Spotify"}
+                type={"text"}
+                placeholder={"mediaSpotify"}
+                name={"mediaSpotify"}
+                onChange={handleInputChange}
+                {...register("mediaSpotify")}
+                defaultValue={defaultValue.mediaSpotify}
+              />
+              <Input
+                label={"Video"}
+                type={"text"}
+                placeholder={"mediaVideo"}
+                name={"mediaVideo"}
+                onChange={handleInputChange}
+                {...register("mediaVideo")}
+                defaultValue={defaultValue.mediaVideo}
+              />
+            </div>
+          </div>
+
+          <Button type="submit" buttonStyle="formulary" buttonSize="medium">
+            Save Changes
+          </Button>
+          <Button
+            type="submit"
+            buttonStyle="formulary"
+            buttonSize="medium"
+            onClick={() => deleteMedia()}
+          >
+            Delete Media
+          </Button>
+        </form>
+      </div>
     </section>
   );
 };
 
 export default UserMediaDetail;
+
+const formStyle = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+};
 
 //UserMediaDetail

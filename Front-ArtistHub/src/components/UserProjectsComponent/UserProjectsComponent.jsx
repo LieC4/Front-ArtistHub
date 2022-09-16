@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import { API } from "../../services/API";
 import UserProjectCard from "../UserProjectCard/UserProjectCard";
@@ -10,6 +10,7 @@ import Button from "../Buttons/Button";
 const UserProjectsComponent = ({ project }) => {
   const { user } = useContext(JwtContext);
   console.log(user);
+  const [reload, setReload] = useState(false);
   const [byUsername, setbyUsername] = useState("");
 
   const getProjectsByUsername = async () => {
@@ -21,7 +22,7 @@ const UserProjectsComponent = ({ project }) => {
   //getProjectsByUsername es lo que tenemos que hacer aca,
   useEffect(() => {
     getProjectsByUsername();
-  }, []);
+  }, [reload]);
 
   return (
     <section className="projects">
@@ -32,11 +33,11 @@ const UserProjectsComponent = ({ project }) => {
             alt="logo"
           />
           <h2>{user.username}</h2>
-          {/*<Link to={"/profile/newproject"}>*/}
-          <Button buttonStyle="new" buttonSize="small">
-            New Project
-          </Button>
-          {/*</Link>*/}
+          <Link to={"/profile/newproject"} onClick={() => setReload(true)}>
+            <Button buttonStyle="new" buttonSize="small">
+              New Project
+            </Button>
+          </Link>
         </div>
         <div className="galeria">
           {byUsername.length ? (

@@ -16,6 +16,8 @@ import RequireAuth from "./components/RequiredAuth";
 import ArtistDetail from "./pages/ArtistDetail/ArtistDetail";
 import UserProjectDetail from "./pages/UserProjectDetail/UserProjectDetail";
 import UserMediaDetail from "./pages/UserMediaDetail/UserMediaDetail";
+import UserNewProject from "./pages/UserNewProject/UserNewProject";
+import UserNewMedia from "./pages/UserNewMedia/UserNewMedia";
 
 function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -43,6 +45,8 @@ function App() {
                 </RequireAuth>
               }
             />
+            <Route path="/profile/newproject" element={<UserNewProject />} />
+            <Route path="/profile/newmedia" element={<UserNewMedia />} />
             <Route
               path="/profile/projects/:id"
               element={<UserProjectDetail />}
