@@ -18,11 +18,7 @@ const Header = ({ switchTheme }) => {
         <div className="upperside">
           <div className="logo_container">
 
-            <img
-              className="logo"
-              src="/assets/ArtistHub-logo.png"
-              alt="ArtistHub Logo"
-            />
+            
           </div>
           <div className="upperside_title">
             <Link to="/">

@@ -49,6 +49,7 @@ body {
   --primary: #292325;
   --secondary: #3f9baf;
   --highlight: #46b4cd;
+  --logo: url('../../../public/assets/ArtistHub-logo.png')
 }
 
 [data-theme="☀️"] {
@@ -56,6 +57,7 @@ body {
   --primary: #f9faff;
   --secondary: #3f9baf;
   --highlight: #46b4cd;
+  --logo: url('../../../public/assets/ArtistHub-logo-dark.png')
 }
 
 

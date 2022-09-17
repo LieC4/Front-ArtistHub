@@ -9,8 +9,8 @@ import { API } from "../../services/API";
 import { JwtContext } from "../../contexts/jwtContext";
 
 const UserNewProject = () => {
-  const { user } = useContext(JwtContext);
-  const [actualUser, setActualUser] = useState({});
+  const { user, setUser } = useContext(JwtContext);
+  
   const { register, handleSubmit } = useForm();
   const [datos, setDatos] = useState({
     projectTitle: "",
@@ -22,7 +22,7 @@ const UserNewProject = () => {
   const getUserByID = async () => {
     //Recuperais el usuario del contexto de la linea 12 por id OTRA VEZ
     API.get(`/users/${user._id}`).then((res) => {
-      setActualUser(res.data);
+      setUser(res.data);
     });
   };
 
@@ -50,7 +50,8 @@ const UserNewProject = () => {
       console.log("Primera Respuesta", res);
       const editUser = {
         //este user es del fetch, para hacer un
-        projects: [...actualUser.projects, res.data._id],
+        projects: [...user.projects, res.data._id],
+        medias: user.medias
       };
       API.patch(`/users/${user._id}`, editUser).then((resUser) => {
         console.log("resUser: ", resUser);

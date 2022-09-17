@@ -9,8 +9,8 @@ import { API } from "../../services/API";
 import { JwtContext } from "../../contexts/jwtContext";
 
 const UserNewMedia = () => {
-  const { user } = useContext(JwtContext);
-  const [actualUser, setActualUser] = useState({});
+  const { user, setUser } = useContext(JwtContext);
+  
   const { register, handleSubmit } = useForm();
   const [datos, setDatos] = useState({
     mediaTitle: "",
@@ -23,7 +23,7 @@ const UserNewMedia = () => {
   const getUserByID = async () => {
     //Recuperais el usuario del contexto de la linea 12 por id OTRA VEZ
     API.get(`/users/${user._id}`).then((res) => {
-      setActualUser(res.data);
+      setUser(res.data);
     });
   };
 
@@ -52,8 +52,10 @@ const UserNewMedia = () => {
       console.log("Primera Respuesta", res);
       const editUser = {
         //este user es del fetch, para hacer un
-        medias: [...actualUser.medias, res.data._id],
+        medias: [...user.medias, res.data._id],
+        projects: user.projects
       };
+
       API.patch(`/users/${user._id}`, editUser).then((resUser) => {
         console.log("resUser: ", resUser);
       });
@@ -64,13 +66,13 @@ const UserNewMedia = () => {
     });
   };
 
-  const defaultValues = {
+ /* const defaultValues = {
     mediaTitle: media.mediaTitle,
     mediaDescription: media.mediaDescription,
     mediaSpotify: media.mediaSpotify,
     mediaVideo: media.mediaVideo,
   };
-
+*/
   return (
     <section>
       <form style={formStyle} onSubmit={handleSubmit(formSubmit)}>
@@ -82,7 +84,7 @@ const UserNewMedia = () => {
             name={"mediaTitle"}
             onChange={handleInputChange}
             {...register("mediaTitle")}
-            defaultValues={defaultValues.mediaTitle}
+            //defaultValues={defaultValues.mediaTitle}
           />
         </div>
         <div className="boxuno_register">
@@ -93,7 +95,7 @@ const UserNewMedia = () => {
             name={"mediaDescription"}
             onChange={handleInputChange}
             {...register("mediaDescription")}
-            defaultValues={defaultValues.mediaDescription}
+            //defaultValues={defaultValues.mediaDescription}
           />
         </div>
         <div className="boxuno_register">
@@ -104,7 +106,7 @@ const UserNewMedia = () => {
             name={"mediaSpotify"}
             onChange={handleInputChange}
             {...register("mediaSpotify")}
-            defaultValues={defaultValues.mediaSpotify}
+            //defaultValues={defaultValues.mediaSpotify}
           />
         </div>
         <div className="boxuno_register">
@@ -125,7 +127,7 @@ const UserNewMedia = () => {
             name={"mediaVideo"}
             onChange={handleInputChange}
             {...register("mediaVideo")}
-            defaultValues={defaultValues.mediaVideo}
+           // defaultValues={defaultValues.mediaVideo}
           />
         </div>
         <div className="button_container_register">

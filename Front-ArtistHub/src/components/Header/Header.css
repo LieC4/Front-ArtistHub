@@ -16,6 +16,8 @@ h1 {
   color: var(--primary);
 }
 
+
+
 header nav {
   height: 30vh;
   display: flex;
@@ -46,6 +48,8 @@ header nav ul {
 .logo_container {
   height: 50px;
   width: 50px;
+  background-image: var(--logo);
+  background-size: contain;
 }
 .logo_container img {
   width: 100%;

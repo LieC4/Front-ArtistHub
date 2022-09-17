@@ -8,10 +8,15 @@ import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import { useForm } from "react-hook-form";
 import Input from "../../components/Inputs/Input";
 import Button from "../../components/Buttons/Button";
+import { JwtContext } from "../../contexts/jwtContext";
+import { useContext } from "react";
 
 //TODO: PREGUNTAR SOBRE EL DAFAULTVALUES, QUE NO NOS ESTA FUNCIONANDO :/
 
 const UserProjectDetail = () => {
+  const { user } = useContext(JwtContext);
+  const project = user.projects
+  console.log(project)
   const { id } = useParams();
   console.log(id);
   const [projecto, setProjecto] = useState("");
@@ -37,6 +42,30 @@ const UserProjectDetail = () => {
     });
   };
 
+
+  function removeItemFromArr ( project, id ) {
+    let i = project.indexOf( id );
+ 
+    if ( i !== -1 ) {
+        project.splice( i, 1 );
+    }
+}
+ /* function removeItemFromArr ( project, id ) {
+    let i = project.indexOf( id );
+ 
+    if ( i !== -1 ) {
+        project.splice( i, 1 );
+    }
+}
+ 
+removeItemFromArr( foo, 'picture-1' );
+console.info( foo );
+// ["thumb-1", "thumb-2", "thumb-3", "thumb-4"]
+ 
+removeItemFromArr( foo, 'thumb-2' );
+console.info( foo );
+// ["thumb-1", "thumb-3", "thumb-4"]*/
+
   let navigate = useNavigate();
 
   const defaultValue = {
@@ -61,6 +90,12 @@ const UserProjectDetail = () => {
 
   const deleteProject = () => {
     API.delete(`/projects/${projecto._id}`).then((res) => {
+      removeItemFromArr(project, id);
+      const editUser = {projects: project}
+      API.patch(`/users/${user._id}`, editUser).then((resUser) => {
+        console.log("resUser: ", resUser);
+
+      });
       if (res) {
         navigate("/profile");
       }

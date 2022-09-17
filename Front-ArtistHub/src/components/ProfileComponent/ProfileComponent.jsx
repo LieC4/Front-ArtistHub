@@ -27,6 +27,9 @@ const ProfileComponent = () => {
             alt="logo"
           />
           <h2>{byUsername && byUsername.username}</h2>
+          
+          <h1>I am a {byUsername && byUsername.userType}</h1>
+        
         </div>
         <div className="generalinfo-info">
           <h1>My information</h1>
@@ -35,11 +38,10 @@ const ProfileComponent = () => {
             podia navegar jajajaja.{" "}
           </h2>
         </div>
+
       </div>
       <div className="secondaryinfo">
-        <div className="typeinfo">
-          <h1>I am a {byUsername && byUsername.userType}</h1>
-        </div>
+        
         <div className="socialinfo">
           <h1>Here is info about my company, and social media</h1>
         </div>
