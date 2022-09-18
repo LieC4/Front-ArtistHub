@@ -17,10 +17,11 @@ const ProjectCard = ({ project }) => {
             <img src={project.projectImage} alt={project.projectTitle} />
           </div>
         ) : (
-          <div>
+          <div className="imageniza">
             <img
               src="https://cdn3.iconfinder.com/data/icons/rcons-user-profession/32/designer-512.png"
               alt={project.projectTitle}
+              className="imagencita"
             />
           </div>
         )}

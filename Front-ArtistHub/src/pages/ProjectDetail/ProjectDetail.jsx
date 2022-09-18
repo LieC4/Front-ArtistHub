@@ -20,11 +20,25 @@ const ProjectDetail = () => {
     getProjectoById();
   }, []);
   return (
-    <section>
-      <h1>elias es un crack!</h1>
-      <h2>{projecto.projectTitle}</h2>
-      <img src={projecto.projectImage} alt={projecto.projectTitle} />
-      <h3>{projecto.projectDescription}</h3>
+    <section className="edit_project">
+      
+        <div className="project_infodetail_container">
+          <div className="project_title_container">
+            <h2>{projecto.projectTitle}</h2>
+          </div>
+          <div className="project_content_container">
+            <h4>Description: {projecto.projectDescription}</h4>
+          </div>
+          <div className="project_info_container">
+            <div className="project_img_container">
+              <img src={projecto.projectImage} alt={projecto.projectTitle} />
+            </div>
+          </div>
+          <div className="project_content_container">
+            <h4>Videos: {projecto.projectVideo}</h4>
+          </div>
+        </div>
+      
     </section>
   );
 };

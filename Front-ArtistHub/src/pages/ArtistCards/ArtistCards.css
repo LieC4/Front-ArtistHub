@@ -47,17 +47,17 @@
 }
 
 .searchBox:hover > .searchButton {
-background: white;
+background:   var(--backgroudlupa);
 color : #2f3640;
 }
 
 .searchButton {
-  color: white;
+  color: var(--primary);
   float: right;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--background);
+  background: var(--backgroudlupa);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,13 +70,15 @@ color : #2f3640;
   outline:none;
   float:left;
   padding: 0;
-  color: white;
+  color: var(--primary);
   font-size: 16px;
   transition: 0.4s;
   line-height: 40px;
   width: 0px;
 
 }
+
+
 
 @media screen and (max-width: 620px) {
 .searchBox:hover > .searchInput {
