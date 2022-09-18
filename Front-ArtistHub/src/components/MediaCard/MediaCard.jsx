@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import Button from "../Buttons/Button";
 import "./MediaCard.css";
 
 const MediaCard = ({ byUsername, media }) => {
@@ -28,7 +29,9 @@ const MediaCard = ({ byUsername, media }) => {
       <div>
         <Link to={`/artists/medias/${media._id}`}>
           {" "}
-          <button type="button">See my media</button>
+          <Button buttonSize="small" buttonStyle="primary" type="button">
+            See my media
+          </Button>
         </Link>
       </div>
     </figure>

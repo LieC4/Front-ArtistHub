@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ProjectCard.css";
 import { Link } from "react-router-dom";
+import Button from "../Buttons/Button";
 
 const ProjectCard = ({ project }) => {
   //console.log("este es el usuario", byUsername);
@@ -32,7 +33,9 @@ const ProjectCard = ({ project }) => {
       <div>
         <Link to={`/artists/projects/${project._id}`}>
           {" "}
-          <button type="button">See my project</button>
+          <Button buttonSize="small" buttonStyle="primary" type="button">
+            See my project
+          </Button>
         </Link>
       </div>
     </figure>
