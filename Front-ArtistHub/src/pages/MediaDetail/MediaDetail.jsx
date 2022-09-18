@@ -20,11 +20,24 @@ const MediaDetail = () => {
     getMedioById();
   }, []);
   return (
-    <section>
-      <h1>elias es un crack!</h1>
-      <h2>{medio.mediaTitle}</h2>
-      <img src={medio.mediaImage} alt={medio.mediaTitle} />
-      <h3>{medio.mediaDescription}</h3>
+    <section className="edit_project">
+      <div className="project_infodetail_container">
+        <div className="project_title_container">
+          <h2>{medio.mediaTitle}</h2>
+        </div>
+        <div className="project_content_container">
+          <h4>Description: {medio.mediaDescription}</h4>
+        </div>
+        <div className="project_info_container">
+          <div className="project_img_container">
+            <img src={medio.mediaImage} alt={medio.mediaTitle} />
+          </div>
+        </div>
+        <div className="project_content_container">
+          <h4>Videos: {medio.mediaSpotify}</h4>
+          <h4>Videos: {medio.mediaVideo}</h4>
+        </div>
+      </div>
     </section>
   );
 };

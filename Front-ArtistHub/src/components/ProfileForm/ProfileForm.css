@@ -1,86 +1,123 @@
 .edit_profile {
-    background: var(--background);
-    padding-bottom: 30px;
-  }
-  .edit_profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .profile_form {
-    max-width: 300px;
-    width: 100%;
-    color: var(--background);
-    padding: 30px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 20px;
-    font-weight: bolder;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  }
+  background: var(--background);
+  padding-bottom: 30px;
+}
+.edit_profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
 
-  .boxuno_boxdos {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: row;
-    gap: 2rem;
-  }
-  .boxuno {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--primary);
-    margin-bottom: 10px;
-    gap: 0.5rem;
-    margin-left: 10px;
-    padding: 50px;
-    border-radius: 6px;
-  }
-  .boxdos {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--primary);
-    margin-bottom: 10px;
-    gap: 0.5rem;
-    margin-left: 10px;
-    padding: 50px;
-    border-radius: 6px;
-  }
+.profile_info img {
+  width: 100%;
+}
+.profile_info {
+  width: 200px;
+  height: 200px;
 
-  .button_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .profile_title {
-    font-weight: bolder;
-    color: var(--primary);
-    margin-bottom: 20px;
-  }
+
+}
+
+.profile_form {
+  max-width: 300px;
+  width: 100%;
+  color: var(--background);
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.boxuno_boxdos_boxtres {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 2rem;
+}
+.boxuno {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary);
+  margin-bottom: 10px;
+  gap: 0.5rem;
+  margin-left: 10px;
+  padding: 50px;
+  border-radius: 6px;
+}
+.boxuno h2 {
+  color: var(--background);
+}
+
+.boxdos {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary);
+  margin-bottom: 10px;
+  gap: 0.5rem;
+  margin-left: 10px;
+  padding: 50px;
+  border-radius: 6px;
+}
+
+.button_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile_title {
+  font-weight: bolder;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
 
 .select_container {
-    margin-top: 10px;
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
-    font-size: 15px;
-    color: var(--backgroundGeneral);
+  font-size: 15px;
+  color: var(--backgroundGeneral);
 }
-  .select {
-    border: solid 1px var(--background);
-  }
+.select {
+  border: solid 1px var(--background);
+}
 
 .label_select_profile {
-    padding-right: 0.5rem;
-    font-size: 15px;
-    color: var(--background);
-    
+  padding-right: 0.5rem;
+  font-size: 15px;
+  color: var(--background);
+  
+}
+
+.divsocialinfo {
+display: flex;
+border-top: solid rgb(206, 206, 206) 1px;
+text-align: center;
+justify-content: center;
+}
+
+.divsocialinfo p {
+color: #292325;
+}
+
+.divcompany {
+  display: flex;
+  border-top: solid rgb(206, 206, 206) 1px;
+  text-align: center;
+  justify-content: center;
+}
+
+.divcompany p {
+color: #292325;
 }

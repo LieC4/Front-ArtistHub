@@ -15,8 +15,8 @@ import { useContext } from "react";
 
 const UserProjectDetail = () => {
   const { user } = useContext(JwtContext);
-  const project = user.projects
-  console.log(project)
+  const project = user.projects;
+  console.log(project);
   const { id } = useParams();
   console.log(id);
   const [projecto, setProjecto] = useState("");
@@ -42,15 +42,14 @@ const UserProjectDetail = () => {
     });
   };
 
+  function removeItemFromArr(project, id) {
+    let i = project.indexOf(id);
 
-  function removeItemFromArr ( project, id ) {
-    let i = project.indexOf( id );
- 
-    if ( i !== -1 ) {
-        project.splice( i, 1 );
+    if (i !== -1) {
+      project.splice(i, 1);
     }
-}
- /* function removeItemFromArr ( project, id ) {
+  }
+  /* function removeItemFromArr ( project, id ) {
     let i = project.indexOf( id );
  
     if ( i !== -1 ) {
@@ -91,10 +90,9 @@ console.info( foo );
   const deleteProject = () => {
     API.delete(`/projects/${projecto._id}`).then((res) => {
       removeItemFromArr(project, id);
-      const editUser = {projects: project}
+      const editUser = { projects: project };
       API.patch(`/users/${user._id}`, editUser).then((resUser) => {
         console.log("resUser: ", resUser);
-
       });
       if (res) {
         navigate("/profile");
@@ -108,74 +106,84 @@ console.info( foo );
 
   return (
     <section className="edit_project">
-      <div className="project_info_container">
-        <h2>{projecto.projectTitle}</h2>
-        <div>
-          <img src={projecto.projectImage} alt={projecto.projectTitle} />
-        </div>
-        <p>Videos: {projecto.projectVideo}</p>
-        <p>Description: {projecto.projectDescription}</p>
-      </div>
-
-      <div className="project_form_container">
-        <form
-          className="profile_form"
-          style={formStyle}
-          onSubmit={handleSubmit(formSubmit)}
-        >
-          <h2>Edit Project</h2>
-          <div className="boxuno_boxdos">
-            <div className="boxuno">
-              <Input
-                label={"Title"}
-                type={"text"}
-                placeholder={"projectTitle"}
-                name={"projectTitle"}
-                onChange={handleInputChange}
-                {...register("projectTitle")}
-                defaultValue={defaultValue.projectTitle}
-              />
-              <Input
-                label={"Description"}
-                type={"textarea"}
-                placeholder={"projectDescription"}
-                name={"projectDescription"}
-                onChange={handleInputChange}
-                {...register("projectDescription")}
-                defaultValue={defaultValue.projectDescription}
-              />
-              <Input
-                label={"Image"}
-                type={"file"}
-                placeholder={"projectImage"}
-                name={"projectImage"}
-                onChange={handleInputChange}
-                {...register("projectImage")}
-              />
-              <Input
-                label={"Video"}
-                type={"text"}
-                placeholder={"projectVideo"}
-                name={"projectVideo"}
-                onChange={handleInputChange}
-                {...register("projectVideo")}
-                defaultValue={defaultValue.projectImage}
-              />
+      <div className="project_detail_wrapper">
+        <div className="project_infodetail_container">
+          <div className="project_title_container">
+            <h2>{projecto.projectTitle}</h2>
+          </div>
+          <div className="project_content_container">
+            <h4>Description: {projecto.projectDescription}</h4>
+          </div>
+          <div className="project_info_container">
+            <div className="project_img_container">
+              <img src={projecto.projectImage} alt={projecto.projectTitle} />
             </div>
           </div>
+          <div className="project_content_container">
+            <h4>Videos: {projecto.projectVideo}</h4>
+          </div>
+        </div>
 
-          <Button type="submit" buttonStyle="formulary" buttonSize="medium">
-            Save Changes
-          </Button>
-          <Button
-            type="submit"
-            buttonStyle="formulary"
-            buttonSize="medium"
-            onClick={() => deleteProject()}
+        <div className="project_form_container">
+          <form
+            className="profile_form"
+            style={formStyle}
+            onSubmit={handleSubmit(formSubmit)}
           >
-            Delete Project
-          </Button>
-        </form>
+            <h2>Edit Project</h2>
+            <div className="boxuno_boxdos">
+              <div className="boxuno">
+                <Input
+                  label={"Title"}
+                  type={"text"}
+                  placeholder={"projectTitle"}
+                  name={"projectTitle"}
+                  onChange={handleInputChange}
+                  {...register("projectTitle")}
+                  defaultValue={defaultValue.projectTitle}
+                />
+                <Input
+                  label={"Description"}
+                  type={"textarea"}
+                  placeholder={"projectDescription"}
+                  name={"projectDescription"}
+                  onChange={handleInputChange}
+                  {...register("projectDescription")}
+                  defaultValue={defaultValue.projectDescription}
+                />
+                <Input
+                  label={"Image"}
+                  type={"file"}
+                  placeholder={"projectImage"}
+                  name={"projectImage"}
+                  onChange={handleInputChange}
+                  {...register("projectImage")}
+                />
+                <Input
+                  label={"Video"}
+                  type={"text"}
+                  placeholder={"projectVideo"}
+                  name={"projectVideo"}
+                  onChange={handleInputChange}
+                  {...register("projectVideo")}
+                  defaultValue={defaultValue.projectImage}
+                />
+              </div>
+            </div>
+
+            <Button type="submit" buttonStyle="formulary" buttonSize="medium">
+              Save Changes
+            </Button>
+            <Button
+              type="submit"
+              buttonStyle="formulary"
+              buttonSize="medium"
+              onClick={() => deleteProject()}
+            >
+              Delete Project
+            </Button>
+          </form>
+        </div>
       </div>
     </section>
   );
@@ -189,5 +197,3 @@ const formStyle = {
   alignItems: "center",
   justifyContent: "center",
 };
-
-//UserProjectDetail
