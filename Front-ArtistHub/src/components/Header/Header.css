@@ -1,22 +1,9 @@
 header {
-  background-color: var(--background);
 }
-
-/*header {
-  --logo: url('../../../public/assets/ArtistHub-logo.png')
-}
-header[data-theme="theme"] {
-  --logo: url('../../../public/assets/ArtistHub-logo-dark.png')
-}
-.logo {
-  background: var(--logo);
-}*/
 
 h1 {
-  color: var(--primary);
+  color: var(--color-font-secondary);
 }
-
-
 
 header nav {
   height: 30vh;
@@ -61,53 +48,4 @@ header nav ul {
 
 .upperside_toggle {
   width: 15%;
-}
-
-/*dark mode button*/
-
-.input[type=checkbox]{
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
-
-.label {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 60px;
-  height: 30px;
-  background: var(--primary);
-  display: block;
-  border-radius: 30px;
-  position: relative;
-}
-
-.label:after {
-  content: '';
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 20px;
-  height: 20px;
-  background: var(--background);
-  border-radius: 30px;
-  transition: 0.3s;
-}
-
-.input:checked + label {
-  background: var(--primary);
-}
-
-.input:checked + label:after {
-  left: calc(100% - 5px);
-  transform: translateX(-100%);
-  background: var(--background);
-}
-
-.label:active:after {
-  width: 30px;
-}
-
-.toggle {
-  margin-bottom: 20px;
 }

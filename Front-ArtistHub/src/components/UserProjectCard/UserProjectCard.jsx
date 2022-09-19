@@ -10,25 +10,28 @@ const UserProjectCard = ({ project }) => {
 
   return (
     <figure className="projectcard">
-      <h4 className="title">{project.projectTitle}</h4>
-      <div>
-        {" "}
+      <h4 className="title">{project.projectTitle}</h4>{" "}
+      <div className="projectcard_img_description_wrapper">
         {project.projectImage != undefined ? (
-          <div>
+          <div className="projectcard_img_container">
             <img src={project.projectImage} alt={project.projectTitle} />
           </div>
         ) : (
-          <div>
+          <div className="projectcard_img_container">
             <img
               src="https://cdn3.iconfinder.com/data/icons/rcons-user-profession/32/designer-512.png"
               alt={project.projectTitle}
             />
           </div>
         )}
+        <div className="description">
+          <p className="description_text">
+            Project: {project.projectDescription}
+          </p>
+          <p className="description_text">Created at: {project.createdAt}</p>
+          <p className="description_text">Last update: {project.updatedAt}</p>
+        </div>
       </div>
-      <p className="description">Project: {project.projectDescription}</p>
-      <p className="description">Created at: {project.createdAt}</p>
-      <p className="description">Last update: {project.updatedAt}</p>
       <div>
         <Link to={`/profile/projects/${project._id}`}>
           {" "}

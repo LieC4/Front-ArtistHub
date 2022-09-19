@@ -1,25 +1,18 @@
 import { useContext } from "react";
 import { JwtContext } from "../../contexts/jwtContext";
 import { Link, useNavigate } from "react-router-dom";
-import SearchBar from "../SearchBar/SearchBar";
 import Button from "../Buttons/Button";
 import "./Header.css";
-import { Title } from "../Text/Text";
 
-const Header = ({ switchTheme }) => {
+const Header = () => {
   const { user, logout } = useContext(JwtContext);
   let navigate = useNavigate();
-
- 
 
   return (
     <header>
       <nav>
         <div className="upperside">
-          <div className="logo_container">
-
-            
-          </div>
+          <div className="logo_container"></div>
           <div className="upperside_title">
             <Link to="/">
               <h1>ArtistHub</h1>
@@ -78,16 +71,6 @@ const Header = ({ switchTheme }) => {
               </li>
             </>
           )}
-          <li>
-            <div className="upperside_toggle">
-              <div className="toggle">
-                <input className="input" type="checkbox" id="switch" />
-                <label className="label" htmlFor="switch" onClick={switchTheme}>
-                  Toggle
-                </label>
-              </div>
-            </div>
-          </li>
         </ul>
       </nav>
     </header>

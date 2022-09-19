@@ -56,6 +56,9 @@ const MediaComponent = ({ media }) => {
                 Likes <b>360</b>
               </a>
             </div>
+            <div className="about">
+              <h3>Medias</h3>
+            </div>
           </div>
         </div>
 
@@ -66,10 +69,10 @@ const MediaComponent = ({ media }) => {
               <p> Joined on : {byUsername && byUsername.createdAt}</p>
               <div class="user-sm-links">
                 <a href="/" class="sm-link">
-                  <img src="/assets/twitter.png" alt="Twitter" />
+                  <img src="/assets/web.png" alt="Twitter" />
                 </a>
                 <a href="/" class="sm-link">
-                  <img src="/assets/web.png" alt="Twitter" />
+                  <img src="/assets/twitter.png" alt="Twitter" />
                 </a>
                 <a href="/" class="sm-link">
                   <img src="/assets/linkedin.png" alt="Twitter" />

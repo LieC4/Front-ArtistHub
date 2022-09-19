@@ -3,8 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import { API } from "../../services/API";
 import "./UserMediaDetail.css";
-import { Link } from "react-router-dom";
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import { useForm } from "react-hook-form";
 import Input from "../../components/Inputs/Input";
 import Button from "../../components/Buttons/Button";

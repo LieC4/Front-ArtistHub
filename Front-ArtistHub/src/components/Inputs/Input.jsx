@@ -38,12 +38,13 @@ export default Input;
 
 const labelStyle = {
   marginTop: 5,
+  color: "var(--color-font-secondary)",
 };
 
 const inputStyle = {
   outlineStyle: "none",
   borderRadius: "4px",
-  border: "solid 1px var(--background)",
+  border: "solid 1px var(--color-font-secondary)",
   borderBottomWidth: "2px",
   transition: "all 0.3s ease",
   padding: "5px",

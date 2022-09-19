@@ -1,66 +1,59 @@
 .register {
-    background: var(--background);
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-  .register {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .register_form {
-    border: solid 1px var(--text-primary);
-    max-width: 300px;
-    width: 100%;
-    color: var(--background);
-    padding: 25px 30px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 20px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    font-weight: bolder;
-    background-color: var(--primary);
-  }
-  .boxuno_register {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    gap: 0.5rem;
-    margin-left: 10px;
-  }
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .button_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .register_title {
-    font-weight: bolder;
-    color: var(--primary);
-    margin-bottom: 20px;
-  }
+.register_form {
+  border: solid 1px var(--button-color-font);
+  max-width: 300px;
+  width: 100%;
+  padding: 25px 30px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bolder;
+}
+.boxuno_register {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  gap: 0.5rem;
+  margin-left: 10px;
+}
+
+.button_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register_title {
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
 
 .select_container {
-    margin-top: 10px;
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 15px;
-    color: var(--backgroundGeneral);
+  margin-top: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
 }
 
 .label_select_register {
-    padding-right: 0.5rem;
-    font-size: 15px;
-    color: var(--background);    
+  padding-right: 0.5rem;
+  font-size: 15px;
 }
 
 .button_container_register {

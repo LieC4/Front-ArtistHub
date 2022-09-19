@@ -1,169 +1,69 @@
 .card-container {
-	background-color: white;
-	min-width: 350px;
-	max-width: 600px;
-	height: auto;
-	border-radius: 14px;
-	box-shadow: 0px 10px 30px hsl(186, 11%, 51%);
+  min-width: 350px;
+  max-width: 600px;
+  height: auto;
 }
 
 article {
-	background-color: var(--primary);
-	background-position: 0px 0px;
-	background-repeat: no-repeat;
-	background-size: contain;
-	text-align: center;
-	border-top-left-radius: 14px;
-	border-top-right-radius: 14px;
+  text-align: center;
 }
 
 article img {
-	margin: auto;
-	width: 170px;
-	border: solid var(--background) 4px;
-	border-radius: 50%;
-	margin-top: 75px;
+  margin: auto;
+  max-width: 80px;
+  border: solid var(--background) 4px;
+  border-radius: 50%;
+  margin-top: 75px;
 }
 
 .bold-text {
-	font-weight: bold;
-	font-size: 1.1rem;
-	text-align: center;
-	padding: 10px 20px 0px 20px;
-  color: black;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 10px 20px 0px 20px;
+  color: var(--color-font-secondary);
 }
 
 .normal-text {
-	font-weight: normal;
-	font-size: 0.95rem;
-	color: hsl(0, 0%, 50%);
-	text-align: center;
-	padding-bottom: 10px;
+  font-weight: normal;
+  font-size: 0.95rem;
+  text-align: center;
+  padding-bottom: 10px;
+  color: var(--color-font-secondary);
 }
 
 /* SOCIAL STATS */
 .smaller-text {
-	font-weight: normal;
-	font-size: 0.7rem;
-	color: hsl(0, 0%, 50%);
-	text-align: center;
-	letter-spacing: 1px;
-	padding-bottom: 20px;
-	line-height: 5px;
+  font-weight: normal;
+  font-size: 0.7rem;
+  text-align: center;
+  letter-spacing: 1px;
+  padding-bottom: 20px;
+  line-height: 5px;
 }
 
 .social-container {
-	display: flex;
-	border-top: solid rgb(206, 206, 206) 1px;
-	text-align: center;
+  display: flex;
+  border-top: solid rgb(0, 0, 0) 1px;
+  justify-content: space-around;
 }
 
 .divboton {
   display: flex;
-	border-top: solid rgb(206, 206, 206) 1px;
-	text-align: center;
+  border-top: solid rgb(0, 0, 0) 1px;
+  text-align: center;
   justify-content: center;
 }
 
-.buttondetail {
-  display: flex;
-  margin-left: 120px;
-  
-  background-color: var(--secondary);
-  border-radius: 20px;
-  border-color: var(--background);
-  align-items: center;
-  padding: 10px;
-  height: 30px;
-  color: var(--background);
+.social-element {
+  max-width: 50px;
 }
 
-.followers {
-	flex: 1;
-}
-
-
-.likes {
-	flex: 1;
-}
-
-.photos {
-	flex: 1;
+.social-element a {
+  max-width: 50px;
 }
 
 .social-container img {
   margin-top: 10px;
-  width: 40%;
+  width: 40px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-.artistcard {
-  width: 250px;
-  min-height: 460px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  padding: 0.8rem;
-  text-align: left;
-  background-color: var(--primary);
-  color: var(--text-primary);
-  border-radius: 0.5rem;
-  box-shadow: 0 0 2em rgba(0, 0, 0, 0.317);
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-.artistcard .username {
-  text-align: center;
-  padding: 3px;
-  color: var(--background);
-}
-.artistcard img {
-  border-radius: 0.5rem;
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-}
-.divboton {
-  text-align: center;
-}
-.buttondetail {
-  display: flex;
-  margin-left: 60px;
-  
-  background-color: var(--secondary);
-  border-radius: 14px;
-  align-items: center;
-  padding: 10px;
-  color: var(--background);
-}
-.artistcard .rol {
-  text-align: center;
-  padding: 3px;
-  color: var(--background);
-}
-
-.designer {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.musician {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-*/

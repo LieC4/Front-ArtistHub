@@ -1,101 +1,90 @@
 .btn {
-    font-family: 'Anek Telugu', sans-serif;
-    font-weight: 400;
-    border-radius: 10px;
-    cursor: pointer;
+  font-family: "Anek Telugu", sans-serif;
+  font-weight: 400;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
 }
 
 /*BUTTON COLOURS*/
 
 .headerbutton {
-    background-color: var(--background);
-    color: var(--primary);
-    border: none;
-    font-weight: bold;
+  border: none;
+  font-weight: bold;
+  background-color: transparent;
 }
 .headerbutton:hover {
-    background-color: var(--headerhighlight);
+  background: var(--highlight-header);
 }
 
 .primary {
-    background-color: var(--secondary);
-    color: var(--background);
-    border: none;
-    font-weight: bold;
+  border: none;
+  font-weight: bold;
 }
 .primary:hover {
-    background-color: var(--highlight);
+  background-color: var(--highlight);
 }
 
 .formulary {
-    background-color: var(--secondary);
-    color: var(--background);
-    border: none;
-    font-weight: bold;
+  border: none;
+  font-weight: bold;
 }
 .formulary:hover {
-    background-color: var(--highlight);
+  background-color: var(--highlight);
 }
 
 .new {
-    background-color: var(--secondary);
-    color: var(--background);
-    border: none;
-    font-weight: bold;
+  border: none;
+  font-weight: bold;
 }
 .new:hover {
-    background-color: var(--highlight);
+  background-color: var(--highlight);
 }
 
 .edit {
-    background-color: var(--secondary);
-    color: var(--background);
-    border: none;
-    font-weight: bold;
+  border: none;
+  font-weight: bold;
 }
 .edit:hover {
-    background-color: var(--highlight);
+  background-color: var(--highlight);
 }
 
 .delete {
-    background-color: var(--secondary);
-    color: var(--background);
-    border: none;
-    font-weight: bold;
+  border: none;
+  font-weight: bold;
 }
 .delete:hover {
-    background-color: var(--highlight);
+  background-color: var(--highlight);
 }
 
 .artist {
-    background-color: var(--secondary);
-    color: var(--background);
-    border: none;
-    font-weight: bold;
+  border: none;
+  font-weight: bold;
+  background: var(--button-background);
+  
 }
 .artist:hover {
-    background-color: var(--highlight);
+  background-color: var(--highlight);
 }
 
 /*BUTTON SIZES*/
 .diminute {
-    padding: 5px 10px;
-    font-size: 12px;
-    border-radius: 15px;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
 }
 .small {
-    padding: 5px 10px;
-    font-size: 18px;
-    border-radius: 6px;
-    
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 5px;
 }
 .medium {
-    padding: 10px 30px;
-    font-size: 20px;
-    border-radius: 6px;
+  padding: 10px 30px;
+  font-size: 20px;
+  border-radius: 5px;
 }
 .large {
-    padding: 15px 40px;
-    font-size: 28px;
-    border-radius: 6px;
+  padding: 15px 40px;
+  font-size: 28px;
+  border-radius: 5px;
 }

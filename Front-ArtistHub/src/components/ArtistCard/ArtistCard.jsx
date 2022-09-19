@@ -9,12 +9,12 @@ const ArtistCard = ({ user }) => {
   let navigate = useNavigate();
 
   return (
-		<div className="card-container">
-			<article>
-      {" "}
+    <div className="card-container">
+      <article>
+        {" "}
         {user.avatar != undefined ? (
           <div>
-            <img src={user.avatar} alt={user.username} className="imagen"/>
+            <img src={user.avatar} alt={user.username} className="imagen" />
           </div>
         ) : (
           <div>
@@ -24,16 +24,15 @@ const ArtistCard = ({ user }) => {
             />
           </div>
         )}
-			</article>
-			<h1 className="bold-text">
-      {user.username}            <span className="normal-text">  Italy</span>
-			</h1>
-			<h2 className="normal-text">{user.userType}</h2>
+      </article>
+      <h1 className="bold-text">
+        {user.username} <span className="normal-text"> Italy</span>
+      </h1>
+      <h2 className="normal-text">{user.userType}</h2>
       <div className="divboton">
-        
         <Button
-        buttonStyle="artist"
-        buttonSize="diminute"
+          buttonStyle="artist"
+          buttonSize="diminute"
           type="button"
           className="buttondetail"
           onClick={() => navigate(`/artists/${user.username}`)}
@@ -41,26 +40,37 @@ const ArtistCard = ({ user }) => {
           Check profile
         </Button>
       </div>
-			<div className="social-container">
-				<div className="followers">
-        <a href="https://www.flaticon.es/iconos-gratis/gorjeo" title="gorjeo iconos"><img src="/assets/web.png" alt="Twitter" /></a>
-					<h2 className="smaller-text">Webiste</h2>
-				</div>
-				<div className="likes">
-        <a href="https://www.flaticon.es/iconos-gratis/gorjeo" title="gorjeo iconos"><img src="/assets/twitter.png" alt="Twitter" /></a>
-					<h2 className="smaller-text">Twitter</h2>
-				</div>
-				<div className="photos">
-        <a href="https://www.flaticon.es/iconos-gratis/gorjeo" title="gorjeo iconos"><img src="/assets/linkedin.png" alt="Twitter" /></a>
-					<h2 className="smaller-text">LinkedIn</h2>
-				</div>
-			</div>
-		</div>
-	);
-}
+      <div className="social-container">
+        <div className="social-element">
+          <a
+            href="https://www.flaticon.es/iconos-gratis/gorjeo"
+            title="gorjeo iconos"
+          >
+            <img src="/assets/web.png" alt="Twitter" />
+          </a>
+        </div>
+        <div className="social-element">
+          <a
+            href="https://www.flaticon.es/iconos-gratis/gorjeo"
+            title="gorjeo iconos"
+          >
+            <img src="/assets/twitter.png" alt="Twitter" />
+          </a>
+        </div>
+        <div className="social-element">
+          <a
+            href="https://www.flaticon.es/iconos-gratis/gorjeo"
+            title="gorjeo iconos"
+          >
+            <img src="/assets/linkedin.png" alt="Twitter" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default ArtistCard;
-
 
 /*return (
     <figure className="artistcard">

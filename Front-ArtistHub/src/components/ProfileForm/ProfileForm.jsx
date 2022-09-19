@@ -120,32 +120,29 @@ const ProfileForm = () => {
                 <p>Company: {user.company}</p>
               </div>
               <div className="social-container">
-                <div className="followers">
+                <div className="social-element">
                   <a
                     href="https://www.flaticon.es/iconos-gratis/gorjeo"
                     title="gorjeo iconos"
                   >
                     <img src="/assets/web.png" alt="Twitter" />
                   </a>
-                  <h2 className="smaller-text">Webiste</h2>
                 </div>
-                <div className="likes">
+                <div className="social-element">
                   <a
                     href="https://www.flaticon.es/iconos-gratis/gorjeo"
                     title="gorjeo iconos"
                   >
                     <img src="/assets/twitter.png" alt="Twitter" />
                   </a>
-                  <h2 className="smaller-text">Twitter</h2>
                 </div>
-                <div className="photos">
+                <div className="social-element">
                   <a
                     href="https://www.flaticon.es/iconos-gratis/gorjeo"
                     title="gorjeo iconos"
                   >
                     <img src="/assets/linkedin.png" alt="Twitter" />
                   </a>
-                  <h2 className="smaller-text">LinkedIn</h2>
                 </div>
               </div>
               <div className="divsocialinfo">
@@ -267,7 +264,7 @@ const ProfileForm = () => {
 const selectStyle = {
   outlineStyle: "none",
   borderRadius: "4px",
-  border: "solid 1px var(--background)",
+  border: "solid 1px var(--color-font-secondary)",
   borderBottomWidth: "2px",
   transition: "all 0.3s ease",
   padding: "5px",

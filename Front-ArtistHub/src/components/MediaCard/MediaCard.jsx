@@ -8,24 +8,26 @@ const MediaCard = ({ byUsername, media }) => {
   return (
     <figure className="mediacard">
       <h4 className="title">{media.mediaTitle}</h4>
-      <div>
+      <div className="projectcard_img_description_wrapper">
         {" "}
         {media.mediaImage != undefined ? (
-          <div>
+          <div className="projectcard_img_container">
             <img src={media.mediaImage} alt={media.mediaTitle} />
           </div>
         ) : (
-          <div>
+          <div className="projectcard_img_container">
             <img
               src="https://cdn3.iconfinder.com/data/icons/rcons-user-profession/32/designer-512.png"
               alt={media.mediaTitle}
             />
           </div>
         )}
+        <div className="description">
+          <p className="description_text">Media: {media.mediaDescription}</p>
+          <p className="description_text">Created at: {media.createdAt}</p>
+          <p className="description_text">Last update: {media.updatedAt}</p>
+        </div>
       </div>
-      <p className="description">Media: {media.mediaDescription}</p>
-      <p className="description">Created at: {media.createdAt}</p>
-      <p className="description">Last update: {media.updatedAt}</p>
       <div>
         <Link to={`/artists/medias/${media._id}`}>
           {" "}

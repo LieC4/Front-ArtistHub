@@ -34,7 +34,7 @@ const UserProjectsComponent = ({ project }) => {
             class="user-pic"
           />
           <div class="user-main-details">
-            <h2>{user.username}</h2>
+            <h1>{user.username}</h1>
             <p> I am a {user.userType}</p>
             <div class="user-stats">
               <a href="/" class="stat-link">
@@ -50,6 +50,9 @@ const UserProjectsComponent = ({ project }) => {
                 Likes <b>360</b>
               </a>
             </div>
+            <div className="about">
+              <h3>Projects</h3>
+            </div>
           </div>
         </div>
         <div class="user-complete-details">
@@ -59,10 +62,10 @@ const UserProjectsComponent = ({ project }) => {
               <p> Joined on : {user.createdAt}</p>
               <div class="user-sm-links">
                 <a href="/" class="sm-link">
-                  <img src="/assets/twitter.png" alt="Twitter" />
+                  <img src="/assets/web.png" alt="Twitter" />
                 </a>
                 <a href="/" class="sm-link">
-                  <img src="/assets/web.png" alt="Twitter" />
+                  <img src="/assets/twitter.png" alt="Twitter" />
                 </a>
                 <a href="/" class="sm-link">
                   <img src="/assets/linkedin.png" alt="Twitter" />

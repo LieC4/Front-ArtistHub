@@ -1,5 +1,4 @@
 .edit_profile {
-  background: var(--background);
   padding-bottom: 30px;
 }
 .edit_profile {
@@ -22,7 +21,6 @@
 .profile_form {
   max-width: 300px;
   width: 100%;
-  color: var(--background);
   padding: 30px;
   border-radius: 5px;
   display: flex;
@@ -31,7 +29,6 @@
   gap: 1rem;
   margin-bottom: 20px;
   font-weight: bolder;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .boxuno_boxdos_boxtres {
@@ -44,26 +41,26 @@
 .boxuno {
   display: flex;
   flex-direction: column;
-  background-color: var(--primary);
   margin-bottom: 10px;
   gap: 0.5rem;
   margin-left: 10px;
   padding: 50px;
-  border-radius: 6px;
+  border-radius: 5px;
+  border: solid 1px var(--color-font-secondary);
 }
 .boxuno h2 {
-  color: var(--background);
+  color: var(--color-font-secondary);
 }
 
 .boxdos {
   display: flex;
   flex-direction: column;
-  background-color: var(--primary);
   margin-bottom: 10px;
   gap: 0.5rem;
   margin-left: 10px;
   padding: 50px;
-  border-radius: 6px;
+  border-radius: 5px;
+  border: solid 1px var(--color-font-secondary);
 }
 
 .button_container {
@@ -87,37 +84,61 @@
   justify-content: center;
 
   font-size: 15px;
-  color: var(--backgroundGeneral);
 }
 .select {
-  border: solid 1px var(--background);
+  border: solid 1px var(--color-font-secondary);
 }
 
 .label_select_profile {
   padding-right: 0.5rem;
   font-size: 15px;
-  color: var(--background);
+  color: var(--color-font-secondary);
   
 }
 
 .divsocialinfo {
-display: flex;
-border-top: solid rgb(206, 206, 206) 1px;
-text-align: center;
-justify-content: center;
+  display: flex;
+  border-top: solid rgb(0, 0, 0) 1px;
+  text-align: center;
+  justify-content: center;
 }
 
 .divsocialinfo p {
-color: #292325;
+  color: var(--color-font-secondary);
 }
 
 .divcompany {
   display: flex;
-  border-top: solid rgb(206, 206, 206) 1px;
+  border-top: solid rgb(0, 0, 0) 1px;
   text-align: center;
   justify-content: center;
 }
 
 .divcompany p {
-color: #292325;
+  color: var(--color-font-secondary);
+}
+
+.social-container {
+  display: flex;
+  border-top: solid rgb(0, 0, 0) 1px;
+  justify-content: space-around;
+}
+
+.social-element {
+  max-width: 50px;
+}
+
+.social-element a {
+  max-width: 50px;
+}
+
+.social-container img {
+  margin-top: 10px;
+  width: 40px;
+}
+
+@media (max-width: 768px) {
+  .boxuno_boxdos_boxtres {
+    flex-wrap: wrap;
+  }
 }

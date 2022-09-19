@@ -3,8 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import { API } from "../../services/API";
 import "./UserProjectDetail.css";
-import { Link } from "react-router-dom";
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import { useForm } from "react-hook-form";
 import Input from "../../components/Inputs/Input";
 import Button from "../../components/Buttons/Button";
@@ -107,11 +105,11 @@ console.info( foo );
   return (
     <section className="edit_project">
       <div className="project_detail_wrapper">
-        <div className="project_infodetail_container">
+        <div className="project_infodetail_containerdos">
           <div className="project_title_container">
             <h2>{projecto.projectTitle}</h2>
           </div>
-          <div className="project_content_container">
+          <div className="project_content_containerdos">
             <h4>Description: {projecto.projectDescription}</h4>
           </div>
           <div className="project_info_container">
@@ -119,7 +117,7 @@ console.info( foo );
               <img src={projecto.projectImage} alt={projecto.projectTitle} />
             </div>
           </div>
-          <div className="project_content_container">
+          <div className="project_content_containerdos">
             <h4>Videos: {projecto.projectVideo}</h4>
           </div>
         </div>

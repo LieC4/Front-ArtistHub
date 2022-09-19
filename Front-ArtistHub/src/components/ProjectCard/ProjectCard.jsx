@@ -11,10 +11,10 @@ const ProjectCard = ({ project }) => {
   return (
     <figure className="projectcard">
       <h4 className="title">{project.projectTitle}</h4>
-      <div>
+      <div className="projectcard_img_description_wrapper">
         {" "}
         {project.projectImage != undefined ? (
-          <div>
+          <div className="project_card_img">
             <img src={project.projectImage} alt={project.projectTitle} />
           </div>
         ) : (
@@ -26,10 +26,14 @@ const ProjectCard = ({ project }) => {
             />
           </div>
         )}
+        <div className="description">
+          <p className="description_text">
+            Project: {project.projectDescription}
+          </p>
+          <p className="description_text">Created at: {project.createdAt}</p>
+          <p className="description_text">Last update: {project.updatedAt}</p>
+        </div>
       </div>
-      <p className="description">Project: {project.projectDescription}</p>
-      <p className="description">Created at: {project.createdAt}</p>
-      <p className="description">Last update: {project.updatedAt}</p>
       <div>
         <Link to={`/artists/projects/${project._id}`}>
           {" "}

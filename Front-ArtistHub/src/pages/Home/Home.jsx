@@ -12,9 +12,11 @@ const Home = () => {
     <section className="home">
       <div className="background_div">
         <div className="artisthub_title">
-          <div>
+          <div className="subtitle_container">
+            <div className="logo_img_container">
+              <img src="/assets/ArtistHub-logo.png" alt="Logo" />
+            </div>
             <h1>Welcome to ArtistHub!</h1>
-            <h2>Where you can share great projects with other artists!</h2>
           </div>
         </div>
       </div>
@@ -25,32 +27,38 @@ const Home = () => {
             <div className="user_img_containter">
               <img src="/assets/customer-feedback.png" alt="Customer" />
             </div>
-            <h2>Customer</h2>
-            <p>Lorem ipsum lorem ipsum</p>
+            <div>
+              <h2>Customer</h2>
+              <p>Lorem ipsum lorem ipsum</p>
+            </div>
           </figure>
-
           <figure className="user_figure">
             <div className="user_img_containter">
               <img src="/assets/songwriter.png" alt="Musician" />
             </div>
-            <h2>Musician</h2>
-            <p>Lorem ipsum lorem ipsum</p>
+            <div>
+              <h2>Musician</h2>
+              <p>Lorem ipsum lorem ipsum</p>
+            </div>
           </figure>
-
           <figure className="user_figure">
             <div className="user_img_containter">
               <img src="/assets/hand.png" alt="Plastic Artist" />
             </div>
-            <h2>Plastic Artist</h2>
-            <p>Lorem ipsum lorem ipsum</p>
+            <div>
+              <h2>Plastic Artist</h2>
+              <p>Lorem ipsum lorem ipsum</p>
+            </div>
           </figure>
 
           <figure className="user_figure">
             <div className="user_img_containter">
               <img src="/assets/graphic-designer.png" alt="Designer" />
             </div>
-            <h2>Designer</h2>
-            <p>Lorem ipsum lorem ipsum</p>
+            <div>
+              <h2>Designer</h2>
+              <p>Lorem ipsum lorem ipsum</p>
+            </div>
           </figure>
         </div>
 
