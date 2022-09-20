@@ -10,7 +10,7 @@ import { JwtContext } from "../../contexts/jwtContext";
 
 const UserNewProject = () => {
   const { user, setUser } = useContext(JwtContext);
-  
+
   const { register, handleSubmit } = useForm();
   const [datos, setDatos] = useState({
     projectTitle: "",
@@ -51,7 +51,7 @@ const UserNewProject = () => {
       const editUser = {
         //este user es del fetch, para hacer un
         projects: [...user.projects, res.data._id],
-        medias: user.medias
+        medias: user.medias,
       };
       API.patch(`/users/${user._id}`, editUser).then((resUser) => {
         console.log("resUser: ", resUser);
@@ -64,9 +64,14 @@ const UserNewProject = () => {
   };
 
   return (
-    <section>
-      <form style={formStyle} onSubmit={handleSubmit(formSubmit)}>
-        <div className="boxuno_register">
+    <section className="login">
+      <h2 className="new_title">New Project</h2>
+      <form
+        className="login_form"
+        style={formStyle}
+        onSubmit={handleSubmit(formSubmit)}
+      >
+        <div className="boxuno_login">
           <Input
             label={"Title"}
             type={"text"}
@@ -75,8 +80,6 @@ const UserNewProject = () => {
             onChange={handleInputChange}
             {...register("projectTitle")}
           />
-        </div>
-        <div className="boxuno_register">
           <Input
             label={"Description"}
             type={"textarea"}
@@ -85,8 +88,6 @@ const UserNewProject = () => {
             onChange={handleInputChange}
             {...register("projectDescription")}
           />
-        </div>
-        <div className="boxuno_register">
           <Input
             label={"Image"}
             type={"file"}
@@ -95,8 +96,6 @@ const UserNewProject = () => {
             onChange={handleInputChange}
             {...register("projectImage")}
           />
-        </div>
-        <div className="boxuno_register">
           <Input
             label={"Videos (Link)"}
             type={"text"}
@@ -106,7 +105,7 @@ const UserNewProject = () => {
             {...register("projectVideo")}
           />
         </div>
-        <div className="button_container_register">
+        <div className="button_container">
           {/*<Link to={"/profile"}>*/}
           <Button type="submit" buttonStyle="formulary" buttonSize="medium">
             Create Project

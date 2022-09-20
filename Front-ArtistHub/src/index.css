@@ -58,6 +58,9 @@ li {
 html {
   scroll-behavior: smooth;
 }
+h2 {
+  color: var(--button-color-font);
+}
 
 body {
   background: var(--background);

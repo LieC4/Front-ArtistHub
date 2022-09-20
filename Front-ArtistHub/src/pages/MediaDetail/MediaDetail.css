@@ -39,10 +39,24 @@
   align-items: center;
   flex-direction: column;
   margin-bottom: 10px;
-  background-color: var(--primary);
   padding: 1rem;
   border-radius: 6px;
 }
+
+.project_content_container_audio_video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 10px;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
 .project_content_container h4 {
     color: var(--color-font-secondary);
+}
+
+.video-responsive {
+  padding-top: 10px;
 }

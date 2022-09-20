@@ -10,7 +10,7 @@ import { JwtContext } from "../../contexts/jwtContext";
 
 const UserNewMedia = () => {
   const { user, setUser } = useContext(JwtContext);
-  
+
   const { register, handleSubmit } = useForm();
   const [datos, setDatos] = useState({
     mediaTitle: "",
@@ -53,7 +53,7 @@ const UserNewMedia = () => {
       const editUser = {
         //este user es del fetch, para hacer un
         medias: [...user.medias, res.data._id],
-        projects: user.projects
+        projects: user.projects,
       };
 
       API.patch(`/users/${user._id}`, editUser).then((resUser) => {
@@ -66,7 +66,7 @@ const UserNewMedia = () => {
     });
   };
 
- /* const defaultValues = {
+  /* const defaultValues = {
     mediaTitle: media.mediaTitle,
     mediaDescription: media.mediaDescription,
     mediaSpotify: media.mediaSpotify,
@@ -74,9 +74,14 @@ const UserNewMedia = () => {
   };
 */
   return (
-    <section>
-      <form style={formStyle} onSubmit={handleSubmit(formSubmit)}>
-        <div className="boxuno_register">
+    <section className="login">
+      <h2 className="new_title">New Media</h2>
+      <form
+        className="login_form"
+        style={formStyle}
+        onSubmit={handleSubmit(formSubmit)}
+      >
+        <div className="boxuno_login">
           <Input
             label={"Title"}
             type={"text"}
@@ -86,8 +91,6 @@ const UserNewMedia = () => {
             {...register("mediaTitle")}
             //defaultValues={defaultValues.mediaTitle}
           />
-        </div>
-        <div className="boxuno_register">
           <Input
             label={"Description"}
             type={"textarea"}
@@ -97,8 +100,6 @@ const UserNewMedia = () => {
             {...register("mediaDescription")}
             //defaultValues={defaultValues.mediaDescription}
           />
-        </div>
-        <div className="boxuno_register">
           <Input
             label={"Spotify"}
             type={"text"}
@@ -108,8 +109,6 @@ const UserNewMedia = () => {
             {...register("mediaSpotify")}
             //defaultValues={defaultValues.mediaSpotify}
           />
-        </div>
-        <div className="boxuno_register">
           <Input
             label={"Image"}
             type={"file"}
@@ -118,8 +117,6 @@ const UserNewMedia = () => {
             onChange={handleInputChange}
             {...register("mediaImage")}
           />
-        </div>
-        <div className="boxuno_register">
           <Input
             label={"Videos (Link)"}
             type={"text"}
@@ -127,10 +124,10 @@ const UserNewMedia = () => {
             name={"mediaVideo"}
             onChange={handleInputChange}
             {...register("mediaVideo")}
-           // defaultValues={defaultValues.mediaVideo}
+            // defaultValues={defaultValues.mediaVideo}
           />
         </div>
-        <div className="button_container_register">
+        <div className="button_container">
           {/*<Link to={"/profile"}>*/}
           <Button type="submit" buttonStyle="formulary" buttonSize="medium">
             Create Media

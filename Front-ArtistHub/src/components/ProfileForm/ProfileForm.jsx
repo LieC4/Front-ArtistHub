@@ -96,11 +96,11 @@ const ProfileForm = () => {
               <article>
                 {" "}
                 {user.avatar != undefined ? (
-                  <div>
+                  <div className="avatar_img_container">
                     <img
                       src={user.avatar}
                       alt={user.username}
-                      className="imagen"
+                      className="imagen_profile_form"
                     />
                   </div>
                 ) : (
@@ -191,6 +191,23 @@ const ProfileForm = () => {
                 onChange={handleInputChange}
                 {...register("userIntro")}
               />
+              <div className="button_container">
+                <Button
+                  type="submit"
+                  buttonStyle="formulary"
+                  buttonSize="small"
+                >
+                  Save Changes
+                </Button>
+                <Button
+                  type="submit"
+                  buttonStyle="formulary"
+                  buttonSize="small"
+                  onClick={() => deleteUser()}
+                >
+                  Delete Profile
+                </Button>
+              </div>
             </div>
 
             <div className="boxdos">
@@ -236,17 +253,6 @@ const ProfileForm = () => {
               />
             </div>
           </div>
-          <Button type="submit" buttonStyle="formulary" buttonSize="medium">
-            Save Changes
-          </Button>
-          <Button
-            type="submit"
-            buttonStyle="formulary"
-            buttonSize="medium"
-            onClick={() => deleteUser()}
-          >
-            Delete Profile
-          </Button>
         </form>
       </div>
     </section>

@@ -14,10 +14,7 @@
 .profile_info {
   width: 200px;
   height: 200px;
-
-
 }
-
 .profile_form {
   max-width: 300px;
   width: 100%;
@@ -67,6 +64,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .profile_title {
@@ -135,6 +133,10 @@
 .social-container img {
   margin-top: 10px;
   width: 40px;
+}
+
+.imagen_profile_form {
+  margin-top: 0;
 }
 
 @media (max-width: 768px) {

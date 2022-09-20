@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Button from "../../components/Buttons/Button";
 import { API } from "../../services/API";
@@ -173,9 +173,11 @@ const Register = () => {
         </div>
         <br />
         <div className="button_container_register">
-          <Button type="submit" buttonStyle="formulary" buttonSize="medium">
-            Submit
-          </Button>
+          <Link to={"/login"}>
+            <Button type="submit" buttonStyle="formulary" buttonSize="medium">
+              Submit
+            </Button>
+          </Link>
         </div>
       </form>
     </section>
