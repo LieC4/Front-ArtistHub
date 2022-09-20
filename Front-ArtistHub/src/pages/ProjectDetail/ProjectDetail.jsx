@@ -32,7 +32,8 @@ const ProjectDetail = () => {
           </div>
         </div>
         <div className="project_content_container">
-          <h4>Videos: {projecto.projectVideo}</h4>
+          
+          <iframe width="560" height="315" src={projecto.projectVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </section>

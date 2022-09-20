@@ -173,11 +173,11 @@ const Register = () => {
         </div>
         <br />
         <div className="button_container_register">
-          <Link to={"/login"}>
+          
             <Button type="submit" buttonStyle="formulary" buttonSize="medium">
               Submit
             </Button>
-          </Link>
+          
         </div>
       </form>
     </section>
