@@ -1,6 +1,3 @@
-header {
-}
-
 h1 {
   color: var(--color-font-secondary);
 }
@@ -48,4 +45,23 @@ header nav ul {
 
 .upperside_toggle {
   width: 15%;
+}
+
+.avatar_container img {
+  width: 100%;
+  border-radius: 40px;
+  border: solid 1px var(--color-font-secondary);
+}
+.avatar_container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.username_avatar_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

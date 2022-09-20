@@ -35,10 +35,19 @@ const MediaComponent = ({ media }) => {
     <section className="medias">
       <div class="main">
         <div className="generalinfo">
-          <img
-            src="https://cdn3.iconfinder.com/data/icons/rcons-user-profession/32/designer-512.png"
-            class="user-pic"
-          ></img>
+          {byUsername && byUsername.avatar !== undefined ? (
+            <img
+              className="user-pic"
+              src={byUsername && byUsername.avatar}
+              alt={byUsername && byUsername.username}
+            />
+          ) : (
+            <img
+              src="https://cdn3.iconfinder.com/data/icons/rcons-user-profession/32/designer-512.png"
+              alt="logo"
+              className="user-pic"
+            />
+          )}
           <div class="user-main-details">
             <h1>{byUsername && byUsername.username}</h1>
             <p> I am a {byUsername && byUsername.userType}</p>
@@ -57,7 +66,7 @@ const MediaComponent = ({ media }) => {
               </a>
             </div>
             <div className="about">
-              <h3>Medias</h3>
+              <h3>About</h3>
             </div>
           </div>
         </div>
@@ -65,21 +74,40 @@ const MediaComponent = ({ media }) => {
         <div class="user-complete-details">
           <div class="user-meta-details">
             <div class="user-social">
-              <p>Location : London, UK</p>
-              <p> Joined on : {byUsername && byUsername.createdAt}</p>
+              <p>Location: {byUsername && byUsername.location}</p>
+              <p>Company: {byUsername && byUsername.company}</p>
+              <p>
+                {" "}
+                Joined on :{" "}
+                {new Date(
+                  byUsername && byUsername.createdAt
+                ).toLocaleDateString()}
+              </p>
               <div class="user-sm-links">
-                <a href="/" class="sm-link">
+                <a
+                  href={byUsername && byUsername.website}
+                  className="sm-link"
+                  target="_blank"
+                >
                   <img src="/assets/web.png" alt="Twitter" />
                 </a>
-                <a href="/" class="sm-link">
+                <a
+                  href={byUsername && byUsername.twitter}
+                  className="sm-link"
+                  target="_blank"
+                >
                   <img src="/assets/twitter.png" alt="Twitter" />
                 </a>
-                <a href="/" class="sm-link">
+                <a
+                  href={byUsername && byUsername.linkedin}
+                  className="sm-link"
+                  target="_blank"
+                >
                   <img src="/assets/linkedin.png" alt="Twitter" />
                 </a>
               </div>
             </div>
-            <div class="user-techstack">
+            {/*<div class="user-techstack">
               <p>
                 <b>ArtStack</b>
               </p>
@@ -90,7 +118,7 @@ const MediaComponent = ({ media }) => {
                 <li class="tech">Saxo</li>
                 <li class="tech">Classic</li>
               </ul>
-            </div>
+            </div>*/}
           </div>
           <div className="user-all-data">
             {allMedias.length ? (

@@ -24,8 +24,12 @@ const MediaCard = ({ byUsername, media }) => {
         )}
         <div className="description">
           <p className="description_text">Media: {media.mediaDescription}</p>
-          <p className="description_text">Created at: {media.createdAt}</p>
-          <p className="description_text">Last update: {media.updatedAt}</p>
+          <p className="description_text">
+            Created at: {new Date(media.createdAt).toLocaleDateString()}
+          </p>
+          <p className="description_text">
+            Last update: {new Date(media.updatedAt).toLocaleDateString()}
+          </p>
         </div>
       </div>
       <div>

@@ -26,7 +26,7 @@ const ArtistCard = ({ user }) => {
         )}
       </article>
       <h1 className="bold-text">
-        {user.username} <span className="normal-text"> Italy</span>
+        {user.username} <span className="normal-text">{user.location}</span>
       </h1>
       <h2 className="normal-text">{user.userType}</h2>
       <div className="divboton">

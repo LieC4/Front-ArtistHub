@@ -30,8 +30,12 @@ const ProjectCard = ({ project }) => {
           <p className="description_text">
             Project: {project.projectDescription}
           </p>
-          <p className="description_text">Created at: {project.createdAt}</p>
-          <p className="description_text">Last update: {project.updatedAt}</p>
+          <p className="description_text">
+            Created at: {new Date(project.createdAt).toLocaleDateString()}
+          </p>
+          <p className="description_text">
+            Last update: {new Date(project.updatedAt).toLocaleDateString()}
+          </p>
         </div>
       </div>
       <div>

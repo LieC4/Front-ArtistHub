@@ -52,6 +52,16 @@ const Header = () => {
                   Logout
                 </Button>
               </li>
+              <li>
+                <div className="username_avatar_container">
+                  <p>{user.username}</p>
+                  {user.avatar !== undefined ? (
+                    <div className="avatar_container">
+                      <img src={user?.avatar} alt="Avatar" />
+                    </div>
+                  ) : null}
+                </div>
+              </li>
             </>
           ) : (
             <>

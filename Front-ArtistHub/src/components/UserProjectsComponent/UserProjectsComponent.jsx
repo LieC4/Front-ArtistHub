@@ -28,11 +28,15 @@ const UserProjectsComponent = ({ project }) => {
     <section className="projects">
       <div className="main">
         <div className="generalinfo">
-          <img
-            src="https://cdn3.iconfinder.com/data/icons/rcons-user-profession/32/designer-512.png"
-            alt="logo"
-            class="user-pic"
-          />
+          {user.avatar !== undefined ? (
+            <img className="user-pic" src={user.avatar} alt={user.username} />
+          ) : (
+            <img
+              src="https://cdn3.iconfinder.com/data/icons/rcons-user-profession/32/designer-512.png"
+              alt="logo"
+              className="user-pic"
+            />
+          )}
           <div class="user-main-details">
             <h1>{user.username}</h1>
             <p> I am a {user.userType}</p>
@@ -58,21 +62,25 @@ const UserProjectsComponent = ({ project }) => {
         <div class="user-complete-details">
           <div class="user-meta-details">
             <div class="user-social">
-              <p>Location : London, UK</p>
-              <p> Joined on : {user.createdAt}</p>
+              <p>Location: {user.location}</p>
+              <p>Company: {user.company}</p>
+              <p>
+                {" "}
+                Joined on : {new Date(user.createdAt).toLocaleDateString()}
+              </p>
               <div class="user-sm-links">
-                <a href="/" class="sm-link">
+                <a href={user.website} className="sm-link" target="_blank">
                   <img src="/assets/web.png" alt="Twitter" />
                 </a>
-                <a href="/" class="sm-link">
+                <a href={user.twitter} className="sm-link" target="_blank">
                   <img src="/assets/twitter.png" alt="Twitter" />
                 </a>
-                <a href="/" class="sm-link">
+                <a href={user.linkedin} className="sm-link" target="_blank">
                   <img src="/assets/linkedin.png" alt="Twitter" />
                 </a>
               </div>
             </div>
-            <div class="user-techstack">
+            {/*<div className="user-techstack">
               <p>
                 <b>ArtStack</b>
               </p>
@@ -83,7 +91,7 @@ const UserProjectsComponent = ({ project }) => {
                 <li class="tech">Saxo</li>
                 <li class="tech">Classic</li>
               </ul>
-            </div>
+            </div>*/}
           </div>
           <div className="user-all-data">
             <div className="new_button_container">
