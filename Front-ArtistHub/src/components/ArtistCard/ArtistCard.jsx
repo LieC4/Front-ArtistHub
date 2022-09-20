@@ -42,26 +42,17 @@ const ArtistCard = ({ user }) => {
       </div>
       <div className="social-container">
         <div className="social-element">
-          <a
-            href="https://www.flaticon.es/iconos-gratis/gorjeo"
-            title="gorjeo iconos"
-          >
+          <a href={user.website} className="sm-link" target="_blank">
             <img src="/assets/web.png" alt="Twitter" />
           </a>
         </div>
         <div className="social-element">
-          <a
-            href="https://www.flaticon.es/iconos-gratis/gorjeo"
-            title="gorjeo iconos"
-          >
+          <a href={user.twitter} className="sm-link" target="_blank">
             <img src="/assets/twitter.png" alt="Twitter" />
           </a>
         </div>
         <div className="social-element">
-          <a
-            href="https://www.flaticon.es/iconos-gratis/gorjeo"
-            title="gorjeo iconos"
-          >
+          <a href={user.linkedin} className="sm-link" target="_blank">
             <img src="/assets/linkedin.png" alt="Twitter" />
           </a>
         </div>
