@@ -109,18 +109,7 @@ const ProfileComponent = () => {
             </div>*/}
           </div>
           <div class="user-all-data">
-            <p>
-              I am a full-stack Web Application Developer and Software Developer
-              working at Talebud. I have a Bachelor of Science in Computer
-              Science, and my primary focus and inspiration for my studies is
-              Web Development. I am a full-stack Web Application Developer and
-              Software Developer working at Talebud. I have a Bachelor of
-              Science in Computer Science, and my primary focus and inspiration
-              for my studies is Web Development. I am a full-stack Web
-              Application Developer and Software Developer working at Talebud. I
-              have a Bachelor of Science in Computer Science, and my primary
-              focus and inspiration for my studies is Web Development.
-            </p>
+            <p>{byUsername && byUsername.userIntro}</p>
           </div>
         </div>
       </div>
