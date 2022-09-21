@@ -39,6 +39,11 @@ header nav ul {
   width: 100%;
 }
 
+.header_ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .upperside_title {
   width: 70%;
 }
@@ -57,6 +62,7 @@ header nav ul {
   height: 40px;
   display: flex;
   justify-content: center;
+  margin-bottom: 8px;
 }
 
 .username_avatar_container {

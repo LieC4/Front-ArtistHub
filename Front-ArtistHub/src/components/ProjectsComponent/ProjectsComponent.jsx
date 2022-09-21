@@ -52,7 +52,7 @@ const ProjectComponent = ({ project }) => {
           <div class="user-main-details">
             <h1>{byUsername && byUsername.username}</h1>
             <p> I am a {byUsername && byUsername.userType}</p>
-            <div class="user-stats">
+            {/*<div class="user-stats">
               <a href="/" class="stat-link">
                 {" "}
                 Proyects <b>3</b>
@@ -65,7 +65,7 @@ const ProjectComponent = ({ project }) => {
                 {" "}
                 Likes <b>360</b>
               </a>
-            </div>
+            </div>*/}
             <div className="about">
               <h3>About</h3>
             </div>

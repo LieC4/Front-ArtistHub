@@ -40,7 +40,7 @@ const UserProjectsComponent = ({ project }) => {
           <div class="user-main-details">
             <h1>{user.username}</h1>
             <p> I am a {user.userType}</p>
-            <div class="user-stats">
+            {/*<div class="user-stats">
               <a href="/" class="stat-link">
                 {" "}
                 Proyects <b>3</b>
@@ -53,7 +53,7 @@ const UserProjectsComponent = ({ project }) => {
                 {" "}
                 Likes <b>360</b>
               </a>
-            </div>
+            </div>*/}
             <div className="about">
               <h3>Projects</h3>
             </div>

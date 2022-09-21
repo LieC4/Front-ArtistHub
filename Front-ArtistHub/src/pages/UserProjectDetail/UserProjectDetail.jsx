@@ -110,15 +110,26 @@ console.info( foo );
             <h2>{projecto.projectTitle}</h2>
           </div>
           <div className="project_content_containerdos">
-            <h4>Description: {projecto.projectDescription}</h4>
+            <h4 className="project_description">
+              Description: {projecto.projectDescription}
+            </h4>
           </div>
           <div className="project_info_container">
             <div className="project_img_container">
               <img src={projecto.projectImage} alt={projecto.projectTitle} />
             </div>
           </div>
-          <div className="project_content_containerdos">
-            <h4>Videos: {projecto.projectVideo}</h4>
+          <div className="project_content_container">
+            <h4>Videos: </h4>
+            <iframe
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${projecto.projectVideo}`}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
 

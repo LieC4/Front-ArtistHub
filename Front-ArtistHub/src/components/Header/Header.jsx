@@ -19,7 +19,7 @@ const Header = () => {
             </Link>
           </div>
         </div>
-        <ul>
+        <ul className="header_ul">
           <li>
             <Link to="/">
               <Button buttonStyle="headerbutton" buttonSize="small">

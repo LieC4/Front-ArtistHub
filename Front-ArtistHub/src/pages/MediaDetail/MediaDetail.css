@@ -15,9 +15,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1rem;
-    padding: 2.5rem;
+    padding: 1.5rem;
     border-radius: 6px;
+    margin: 20px 90px;
 }
 
 .project_title_container {
@@ -26,8 +26,9 @@
   align-items: center;
   flex-direction: column;
   margin-bottom: 20px;
-  padding: 0 70%;
+  padding: 0 50%;
   border-radius: 6px;
+  margin: 20px 90px;
 }
 .project_title_container h2 {
   color: var(--color-font-secondary);
@@ -41,16 +42,7 @@
   margin-bottom: 10px;
   padding: 1rem;
   border-radius: 6px;
-}
-
-.project_content_container_audio_video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  margin-bottom: 10px;
-  padding: 1rem;
-  border-radius: 6px;
+  margin: 20px 90px;
 }
 
 .project_content_container h4 {
