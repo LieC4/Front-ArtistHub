@@ -45,13 +45,38 @@ function App() {
                 </RequireAuth>
               }
             />
-            <Route path="/profile/newproject" element={<UserNewProject />} />
-            <Route path="/profile/newmedia" element={<UserNewMedia />} />
+            <Route
+              path="/profile/newproject"
+              element={
+                <RequireAuth>
+                  <UserNewProject />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/profile/newmedia"
+              element={
+                <RequireAuth>
+                  <UserNewMedia />
+                </RequireAuth>
+              }
+            />
             <Route
               path="/profile/projects/:id"
-              element={<UserProjectDetail />}
+              element={
+                <RequireAuth>
+                  <UserProjectDetail />
+                </RequireAuth>
+              }
             />
-            <Route path="/profile/medias/:id" element={<UserMediaDetail />} />
+            <Route
+              path="/profile/medias/:id"
+              element={
+                <RequireAuth>
+                  <UserMediaDetail />
+                </RequireAuth>
+              }
+            />
             <Route path="/artists/projects/:id" element={<ProjectDetail />} />
             <Route path="/artists/medias/:id" element={<MediaDetail />} />
             <Route path="/artists" element={<ArtistCards />} />
