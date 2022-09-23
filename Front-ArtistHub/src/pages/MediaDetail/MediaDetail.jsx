@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { API } from "../../services/API";
-import "./Mediadetail.css";
+import "./MediaDetail.css";
 import { Link } from "react-router-dom";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 
